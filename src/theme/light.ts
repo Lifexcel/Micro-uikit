@@ -6,7 +6,7 @@ import { light as lightRadio } from "../components/Radio/theme";
 import { light as lightToggle } from "../components/Toggle/theme";
 import { light as lightNav } from "../widgets/Menu/theme";
 import { light as lightModal } from "../widgets/Modal/theme";
-import base from "./base";
+import base, { lightShadows } from "./base";
 import { lightColors } from "./colors";
 
 const lightTheme: DefaultTheme = {
@@ -15,6 +15,7 @@ const lightTheme: DefaultTheme = {
   alert: lightAlert,
   button: lightButton,
   colors: lightColors,
+  shadows: lightShadows,
   card: lightCard,
   toggle: lightToggle,
   nav: lightNav,
