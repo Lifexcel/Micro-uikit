@@ -2,7 +2,6 @@ import { SpaceProps } from "styled-system";
 
 export type RadioTheme = {
   handleBackground: string;
-  focusShadow: string;
 };
 
 export const scales = {
