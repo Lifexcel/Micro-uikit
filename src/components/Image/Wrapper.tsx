@@ -6,6 +6,7 @@ const Wrapper = styled.div<ContainerProps>`
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
+  color:${({ theme }) => theme.colors.text}
   background-size: cover;
   height: ${({ height, responsive }) => (responsive ? 0 : height)}px;
   max-width: ${({ width }) => width}px;
