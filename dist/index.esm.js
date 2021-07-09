@@ -343,7 +343,12 @@ var Icon$p = function (props) {
 
 var Icon$q = function (props) {
     return (React.createElement(Svg, __assign({ viewBox: "0 0 32 32" }, props),
-        React.createElement("image", { width: "32", height: "32", href: "/images/egg/logo.png" })));
+        React.createElement("defs", { id: "defs2" },
+            React.createElement("rect", { x: "86.556549", y: "138.33929", width: "151.19048", height: "31.372025", id: "rect849" })),
+        React.createElement("g", { id: "layer1", transform: "translate(-24.500374,-144.27052)" },
+            React.createElement("g", { id: "g859", transform: "matrix(0.5590066,0,0,0.6000065,21.197589,63.753586)" },
+                React.createElement("ellipse", { style: { fill: "#00ffff", stroke: "#00ffff", strokeWidth: 3.59541, strokeLinecap: "round", paintOrder: "markers fill stroke" }, id: "ellipse880", cx: "30.908314", cy: "159.19344", rx: "23.202297", ry: "23.202295" }),
+                React.createElement("path", { id: "ellipse929", style: { fill: "#ffffff", stroke: "#ffffff", strokeWidth: 1.99498, strokeLinecap: "round", strokeMiterlimit: 4, strokeDasharray: "none", paintOrder: "markers fill stroke" }, d: "m 20.178814,146.94686 c -0.179956,-0.006 -0.355463,-0.004 -0.526947,0.004 -5.486539,0.29931 -6.774958,8.45205 -12.3283449,18.1117 a 24.223292,25.185895 0 0 0 2.5778159,7.13794 c 6.15173,-3.1655 10.080009,-17.8126 14.786479,-23.90246 -1.77612,-0.88035 -3.249299,-1.30864 -4.509003,-1.35185 z m 17.322796,0 c -0.179954,-0.006 -0.355463,-0.004 -0.526949,0.004 -6.609982,0.36057 -7.120251,12.11768 -16.345141,24.17921 10.341494,8.02589 15.187882,-14.81717 21.382062,-22.83203 -1.776119,-0.88035 -3.250267,-1.30864 -4.509972,-1.35185 z m 14.654262,0.61328 c -4.71404,2.58625 -6.086268,12.95854 -14.202589,23.57059 7.837045,6.08221 12.517452,-5.55782 17.020717,-15.04342 a 24.223292,25.185895 0 0 0 -2.818128,-8.52717 z" })))));
 };
 
 var Icon$r = function (props) {
@@ -781,9 +786,12 @@ var getBottom = function (_a) {
     }
     return "auto";
 };
-var DropdownContent = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
+var DropdownContent = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  color:", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  color:", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.level1;
@@ -851,7 +859,10 @@ var observerOptions = {
     threshold: 0,
 };
 
-var Wrapper = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"], ["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"])), function (_a) {
+var Wrapper = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  color:", "\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"], ["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  color:", "\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.text;
+}, function (_a) {
     var height = _a.height, responsive = _a.responsive;
     return (responsive ? 0 : height);
 }, function (_a) {
@@ -888,7 +899,10 @@ var BackgroundImage = function (_a) {
     return React.createElement(Wrapper, __assign({ ref: imgRef }, otherProps));
 };
 
-var StyledImage = styled.img(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n"])));
+var StyledImage = styled.img(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n  color:", ";\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n  color:", ";\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.text;
+});
 var Placeholder = styled.div(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n"])));
 var Image = function (_a) {
     var src = _a.src, alt = _a.alt, otherProps = __rest(_a, ["src", "alt"]);
@@ -1028,7 +1042,7 @@ var Radio = styled.input.attrs({ type: "radio" })(templateObject_1$m || (templat
     return theme.shadows.focus;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.success;
+    return theme.colors.primary;
 }, function (_a) {
     var theme = _a.theme;
     return theme.radio.handleBackground;
@@ -1093,7 +1107,7 @@ var LinkExternal = function (_a) {
         React.createElement(Icon$t, { color: "primary", ml: "4px" })));
 };
 
-var Bar = styled.div(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 32px;\n  border-bottom-left-radius: 32px;\n  height: 16px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 32px;\n  border-bottom-left-radius: 32px;\n  height: 16px;\n  transition: width 200ms ease;\n"])), function (props) { return (props.primary ? props.theme.colors.secondary : props.theme.colors.secondary + "80"); });
+var Bar = styled.div(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 32px;\n  border-bottom-left-radius: 32px;\n  height: 16px;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  border-top-left-radius: 32px;\n  border-bottom-left-radius: 32px;\n  height: 16px;\n  transition: width 200ms ease;\n"])), function (props) { return (props.primary ? props.theme.colors.primary : props.theme.colors.secondary + "80"); });
 Bar.defaultProps = {
     primary: false,
 };
@@ -1183,7 +1197,7 @@ var Input$1 = styled.input(templateObject_2$8 || (templateObject_2$8 = __makeTem
 });
 var StyledToggle = styled.div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 40px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 72px;\n"])), function (_a) {
     var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "input"];
+    return theme.colors[checked ? "primary" : "input"];
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -1544,6 +1558,8 @@ var shadows = {
     focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
     inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
 };
+var lightShadows = __assign(__assign({}, shadows), { active: "0px 0px 0px 1px rgba(94, 72, 255, 0.15), 0px 0px 4px 8px rgba(94, 72, 255, 0.15)", focus: "0px 0px 0px 1px #5e48ff, 0px 0px 0px 4px #5e48ff", inset: "inset 0px 2px 2px -1px #5e48ff" });
+var darkShadows = __assign(__assign({}, shadows), { active: "0px 0px 0px 1px rgba(8, 255, 226, 0.15), 0px 0px 4px 8px rgba(8, 255, 226, 0.15)", focus: "0px 0px 0px 1px #08ffe1, 0px 0px 0px 4px #08ffe1", inset: "inset 0px 2px 2px -1px #08ffe1" });
 var spacing = [0, 4, 8, 16, 24, 32, 48, 64];
 var radii = {
     small: "4px",
@@ -1758,7 +1774,10 @@ var Modal = function (_a) {
 };
 var templateObject_1$u, templateObject_2$9, templateObject_3$5;
 
-var Overlay = styled.div.attrs({ role: "presentation" })(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #ff841a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: #ff841a;\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
+var Overlay = styled.div.attrs({ role: "presentation" })(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: ", ";\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: ", ";\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.background;
+}, function (_a) {
     var show = _a.show;
     return (show ? 0.6 : 0);
 }, function (_a) {
@@ -2805,10 +2824,10 @@ var baseColors = {
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#f3841e", textDisabled: "#BDC2C4", textSubtle: "#f3841e", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { primary: "#5e48ff", primaryBright: "#4b39cc", secondary: "#000", background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", tertiary: "#EFF4F5", text: "#353535", textDisabled: "#BDC2C4", textSubtle: "#4b39cc", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#fff", background: "#242828", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#152b36", text: "#EAE2FC", textDisabled: "#666171", textSubtle: "#f3841e", borderColor: "#524B63", card: "#1e2121", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { primary: "#08ffe1", secondary: "#01051e", background: "#01051e", backgroundDisabled: "#232427", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#00ccb4", tertiary: "#152b36", text: "#eceef0", textDisabled: "#666171", textSubtle: "#00ccb4", borderColor: "#524B63", card: "#1e2121", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
 
@@ -2824,7 +2843,7 @@ var PRIMARY = variants.PRIMARY, SECONDARY = variants.SECONDARY, TERTIARY = varia
 var light$1 = (_a$2 = {},
     _a$2[PRIMARY] = {
         background: lightColors.primary,
-        backgroundActive: lightColors.primaryDark,
+        backgroundActive: lightColors.primaryBright,
         backgroundHover: lightColors.primaryBright,
         border: 0,
         borderColorHover: "currentColor",
@@ -2894,10 +2913,10 @@ var light$1 = (_a$2 = {},
     },
     _a$2);
 var dark$1 = (_b = {},
-    _b[PRIMARY] = __assign({}, light$1.primary),
-    _b[SECONDARY] = __assign({}, light$1.secondary),
+    _b[PRIMARY] = __assign(__assign({}, light$1.primary), { background: darkColors.primary, backgroundHover: darkColors.primaryDark, backgroundActive: darkColors.primaryDark }),
+    _b[SECONDARY] = __assign(__assign({}, light$1.secondary), { border: "2px solid " + darkColors.primary, borderColorHover: darkColors.primaryDark, color: darkColors.primary }),
     _b[TERTIARY] = __assign(__assign({}, light$1.tertiary), { background: darkColors.tertiary, backgroundActive: darkColors.tertiary, backgroundHover: darkColors.tertiary, color: darkColors.primary }),
-    _b[TEXT] = __assign(__assign({}, light$1.text), { backgroundHover: darkColors.tertiary }),
+    _b[TEXT] = __assign(__assign({}, light$1.text), { color: darkColors.text, backgroundHover: darkColors.tertiary }),
     _b[DANGER] = __assign({}, light$1.danger),
     _b[SUBTLE] = __assign({}, light$1.subtle),
     _b[SUCCESS] = __assign({}, light$1.success),
@@ -2906,7 +2925,7 @@ var dark$1 = (_b = {},
 var light$2 = {
     background: lightColors.card,
     boxShadow: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
-    boxShadowActive: shadows.active,
+    boxShadowActive: lightShadows.active,
     boxShadowSuccess: shadows.success,
     boxShadowWarning: shadows.warning,
     cardHeaderBackground: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
@@ -2915,7 +2934,7 @@ var light$2 = {
 var dark$2 = {
     background: darkColors.card,
     boxShadow: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
-    boxShadowActive: shadows.active,
+    boxShadowActive: darkShadows.active,
     boxShadowSuccess: shadows.success,
     boxShadowWarning: shadows.warning,
     cardHeaderBackground: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
@@ -2952,8 +2971,8 @@ var dark$6 = {
     background: darkColors.card,
 };
 
-var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark, button: dark$1, colors: darkColors, card: dark$2, toggle: dark$4, nav: dark$5, modal: dark$6, radio: dark$3 });
+var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark, button: dark$1, colors: darkColors, shadows: darkShadows, card: dark$2, toggle: dark$4, nav: dark$5, modal: dark$6, radio: dark$3 });
 
-var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light, button: light$1, colors: lightColors, card: light$2, toggle: light$4, nav: light$5, modal: light$6, radio: light$3 });
+var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light, button: light$1, colors: lightColors, shadows: lightShadows, card: light$2, toggle: light$4, nav: light$5, modal: light$6, radio: light$3 });
 
 export { Icon$4 as AddIcon, Alert, Icon$5 as ArrowBackIcon, Icon$6 as ArrowDownIcon, Icon$7 as ArrowDropDownIcon, Icon$8 as ArrowDropUpIcon, Icon$9 as ArrowForwardIcon, Icon$a as AutoRenewIcon, BackgroundImage, GridLayout as BaseLayout, Icon$b as BinanceIcon, Icon$2 as BlockIcon, Breadcrumbs, Icon$c as BunnyPlaceholderIcon, Button, ButtonMenu, ButtonMenuItem, Icon$e as CalculateIcon, Card, CardBody, CardFooter, CardHeader, CardRibbon, Icon$d as CardViewIcon, GridLayout$1 as CardsLayout, Checkbox, Icon as CheckmarkCircleIcon, Icon$f as CheckmarkIcon, Icon$g as ChevronDownIcon, Icon$h as ChevronLeftIcon, Icon$i as ChevronRightIcon, Icon$j as ChevronUpIcon, Icon$k as CloseIcon, Icon$l as CogIcon, Icon$m as CommunityIcon, Icon$n as CopyIcon, CopyToClipboard, Dropdown, Icon$1 as ErrorIcon, Flex, Icon$w as GooseRoundIcon, Heading, Icon$o as HelpIcon, IconButton, Image, Icon$3 as InfoIcon, Input, Link, LinkExternal, Icon$p as ListViewIcon, Icon$q as LogoIcon, Icon$r as LogoRoundIcon, Menu, Icon$s as MinusIcon, Modal, ModalProvider, Icon$t as OpenNewIcon, Icon$v as PancakeRoundIcon, Icon$u as PancakesIcon, Icon$x as PrizeIcon, Progress, Icon$A as ProgressBunny, Radio, Icon$y as RemoveIcon, ResetCSS, Icon$E as SearchIcon, Skeleton, Spinner, Svg, Icon$F as SwapVertIcon, Icon$G as SyncAltIcon, Tag, Text, Icon$C as Ticket, Icon$D as TicketRound, ToastContainer, Toggle, Icon$z as VerifiedIcon, Icon$H as WarningIcon, Icon$B as Won, variants$1 as alertVariants, byTextAscending, byTextDescending, darkTheme as dark, darkColors, lightTheme as light, lightColors, makeRender, links as menuConfig, types as toastTypes, useMatchBreakpoints, useModal, useParticleBurst, useTable, useWalletModal };
