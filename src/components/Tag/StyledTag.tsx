@@ -7,7 +7,7 @@ interface ThemedProps extends TagProps {
 }
 
 const getThemeTextColor = ({ outline, variant = "primary", theme }: ThemedProps) =>
-  outline ? getColor(variant, theme) : "#ffffff";
+  outline ? getColor(variant, theme) : theme.colors.background;
 
 export const StyledTag = styled.div<ThemedProps>`
   align-items: center;

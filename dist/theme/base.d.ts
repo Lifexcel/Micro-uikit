@@ -10,6 +10,22 @@ export declare const shadows: {
     focus: string;
     inset: string;
 };
+export declare const lightShadows: {
+    active: string;
+    focus: string;
+    inset: string;
+    level1: string;
+    success: string;
+    warning: string;
+};
+export declare const darkShadows: {
+    active: string;
+    focus: string;
+    inset: string;
+    level1: string;
+    success: string;
+    warning: string;
+};
 declare const _default: {
     siteWidth: number;
     breakpoints: Breakpoints;
