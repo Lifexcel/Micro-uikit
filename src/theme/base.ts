@@ -32,14 +32,14 @@ export const lightShadows = {
   ...shadows,
   active: "0px 0px 0px 1px rgba(94, 72, 255, 0.15), 0px 0px 4px 8px rgba(94, 72, 255, 0.15)",
   focus: "0px 0px 0px 1px #5e48ff, 0px 0px 0px 4px #5e48ff",
-  inset: "inset 0px 2px 2px -1px #5e48ff",
+  inset: "inset 0px 2px 2px -1px gray",
 };
 
 export const darkShadows = {
   ...shadows,
   active: "0px 0px 0px 1px rgba(8, 255, 226, 0.15), 0px 0px 4px 8px rgba(8, 255, 226, 0.15)",
   focus: "0px 0px 0px 1px #08ffe1, 0px 0px 0px 4px #08ffe1",
-  inset: "inset 0px 2px 2px -1px #08ffe1",
+  inset: "inset 0px 2px 2px -1px gray",
 };
 
 const spacing: Spacing = [0, 4, 8, 16, 24, 32, 48, 64];
