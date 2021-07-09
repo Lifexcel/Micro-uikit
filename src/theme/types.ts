@@ -53,7 +53,8 @@ export type Colors = {
   textSubtle: string;
   borderColor: string;
   card: string;
-
+  footer: string;
+  footerShadow: string;
   // Gradients
   gradients: Gradients;
 
