@@ -32,11 +32,14 @@ export type Gradients = {
 };
 
 export type Colors = {
+  light: string;
+  dark: string;
   primary: string;
   primaryBright: string;
   primaryDark: string;
   secondary: string;
   tertiary: string;
+  info: string;
   success: string;
   failure: string;
   warning: string;

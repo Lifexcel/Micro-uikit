@@ -12,7 +12,7 @@ export const light: ButtonTheme = {
     borderColorHover: "currentColor",
     boxShadow: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
     boxShadowActive: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
-    color: "#FFFFFF",
+    color: lightColors.light,
   },
   [SECONDARY]: {
     background: "transparent",
@@ -52,17 +52,17 @@ export const light: ButtonTheme = {
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: "#FFFFFF",
+    color: lightColors.light,
   },
   [SUBTLE]: {
     background: lightColors.textSubtle,
     backgroundActive: `${lightColors.textSubtle}D9`, // 70% opacity
-    backgroundHover: `${lightColors.textSubtle}B3`, // 85% opacity
+    backgroundHover: `${lightColors.textSubtle}B3`, // 85% opacity`
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: "#FFFFFF",
+    color: lightColors.light,
   },
   [SUCCESS]: {
     background: lightColors.success,
@@ -72,7 +72,7 @@ export const light: ButtonTheme = {
     borderColorHover: "currentColor",
     boxShadow: "none",
     boxShadowActive: "none",
-    color: "#FFFFFF",
+    color: lightColors.light,
   },
 };
 
@@ -80,6 +80,7 @@ export const dark: ButtonTheme = {
   [PRIMARY]: {
     ...light.primary,
     background: darkColors.primary,
+    color: darkColors.dark,
     backgroundHover: darkColors.primaryDark,
     backgroundActive: darkColors.primaryDark,
   },
@@ -103,11 +104,17 @@ export const dark: ButtonTheme = {
   },
   [DANGER]: {
     ...light.danger,
+    color: darkColors.dark,
   },
   [SUBTLE]: {
     ...light.subtle,
+    background: darkColors.textSubtle,
+    backgroundActive: `${darkColors.textSubtle}D9`, // 70% opacity
+    backgroundHover: `${darkColors.textSubtle}B3`, // 85% opacity`
+    color: darkColors.dark,
   },
   [SUCCESS]: {
     ...light.success,
+    color: darkColors.dark,
   },
 };
