@@ -4,12 +4,20 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
+import Button from "../../components/Button/Button";
 import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_MOBILE_HEIGHT, FOOTER_DESKTOP_HEIGHT } from "./config";
 import Avatar from "./Avatar";
+import * as IconModule from "./icons";
+import { SvgProps } from "../../components/Svg";
+import Footer from "./Footer";
+
+const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
+
+const { MoonIcon, SunIcon } = Icons;
 
 const Wrapper = styled.div`
   position: relative;
@@ -39,9 +47,10 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const Inner = styled.div<{ isPushed: boolean; showMenu: boolean, isMobile: boolean }>`
   flex-grow: 1;
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  margin-bottom:${({ isMobile }) => isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT}px;
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
@@ -120,9 +129,15 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <Flex>
+        <Flex style={{ justifyContent: 'center', alignItems: 'center' }}>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
+          <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+            <Flex alignItems="center">
+              <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
+              <MoonIcon color="text" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
+            </Flex>
+          </Button>
         </Flex>
       </StyledNav>
       <BodyWrapper>
@@ -140,11 +155,14 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <Inner isPushed={isPushed} showMenu={showMenu}>
+        <Inner isPushed={isPushed} showMenu={showMenu} isMobile={isMobile}>
           {children}
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
+
       </BodyWrapper>
+      <Footer isDark={isDark} isMobile={isMobile} />
+
     </Wrapper>
   );
 };

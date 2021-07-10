@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
-import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_MOBILE_HEIGHT, FOOTER_DESKTOP_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
@@ -10,9 +10,10 @@ interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
 
-const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean, isMobile: boolean }>`
   position: fixed;
   padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
+  padding-bottom:${({ isMobile }) => isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT}px;
   top: 0;
   left: 0;
   display: flex;
@@ -35,9 +36,9 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 `;
 
 const Panel: React.FC<Props> = (props) => {
-  const { isPushed, showMenu } = props;
+  const { isPushed, showMenu, isMobile } = props;
   return (
-    <StyledPanel isPushed={isPushed} showMenu={showMenu}>
+    <StyledPanel isPushed={isPushed} showMenu={showMenu} isMobile={isMobile}>
       <PanelBody {...props} />
       <PanelFooter {...props} />
     </StyledPanel>
