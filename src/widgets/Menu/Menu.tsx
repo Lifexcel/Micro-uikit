@@ -4,7 +4,6 @@ import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
-import Button from "../../components/Button/Button";
 import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
@@ -13,7 +12,7 @@ import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_MOBILE_H
 import Avatar from "./Avatar";
 import * as IconModule from "./icons";
 import { SvgProps } from "../../components/Svg";
-import Footer from "./Footer";
+import { Footer } from "./Footer";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
@@ -66,7 +65,11 @@ const MobileOnlyOverlay = styled(Overlay)`
     display: none;
   }
 `;
-
+const ThemeChangeTab = styled.div`
+display:flex;
+margin:5px 10px;
+cursor:pointer;
+`
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -130,14 +133,13 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <ThemeChangeTab alignItems="center" onClick={() => toggleTheme(!isDark)}>
+            <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
+            <MoonIcon color="text" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
+          </ThemeChangeTab>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
-          <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-            <Flex alignItems="center">
-              <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
-              <MoonIcon color="text" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
-            </Flex>
-          </Button>
+
         </Flex>
       </StyledNav>
       <BodyWrapper>
