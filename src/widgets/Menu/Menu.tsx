@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_MOBILE_HEIGHT, FOOTER_DESKTOP_HEIGHT } from "./config";
+import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_DESKTOP_HEIGHT } from "./config";
 import Avatar from "./Avatar";
 import * as IconModule from "./icons";
 import { SvgProps } from "../../components/Svg";
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
   position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
+  top: ${({ showMenu }) => (showMenu ? 0 : -MENU_HEIGHT)}px;
   left: 0;
   transition: top 0.2s;
   display: flex;
@@ -46,14 +46,14 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean; showMenu: boolean, isMobile: boolean }>`
+const Inner = styled.div<{ isPushed: boolean; showMenu: boolean; isMobile: boolean }>`
   flex-grow: 1;
-  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
-  margin-bottom:${({ isMobile }) => isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT}px;
+  margin-top: ${({ showMenu }) => (showMenu ? MENU_HEIGHT + 10 : 0)}px;
+  margin-bottom: ${({ isMobile }) => (isMobile ? "20" : FOOTER_DESKTOP_HEIGHT)}px;
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+    margin-left: ${({ isPushed }) => (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED)}px;
   }
 `;
 
@@ -66,10 +66,10 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 const ThemeChangeTab = styled.div`
-display:flex;
-margin:5px 10px;
-cursor:pointer;
-`
+  display: flex;
+  margin: 5px 10px;
+  cursor: pointer;
+`;
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -132,14 +132,13 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <Flex style={{ justifyContent: 'center', alignItems: 'center' }}>
-          <ThemeChangeTab alignItems="center" onClick={() => toggleTheme(!isDark)}>
+        <Flex style={{ justifyContent: "center", alignItems: "center" }}>
+          <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
             <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
             <MoonIcon color="text" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
           </ThemeChangeTab>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
-
         </Flex>
       </StyledNav>
       <BodyWrapper>
@@ -161,10 +160,8 @@ const Menu: React.FC<NavProps> = ({
           {children}
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
-
       </BodyWrapper>
       <Footer isDark={isDark} isMobile={isMobile} />
-
     </Wrapper>
   );
 };
