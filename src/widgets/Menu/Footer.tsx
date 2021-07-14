@@ -20,7 +20,6 @@ export const Footer: React.FC<Props> = ({ isMobile }: Props) => {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 600;
     width: auto;
     height: ${isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT}px;
     position: ${isMobile ? "absolute" : "fixed"};
