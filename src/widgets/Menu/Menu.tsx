@@ -73,6 +73,9 @@ const ThemeChangeTab = styled.div`
   cursor: pointer;
 `;
 
+const CustomWalletInfo = styled(Button)`
+font-weight:normal;
+`
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -136,9 +139,9 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex style={{ justifyContent: "center", alignItems: "center" }}>
-          <Button size="sm" variant="tertiary">
+          <CustomWalletInfo size="sm" variant="tertiary">
             <CommunityIcon style={{ marginRight: "5px" }} /> BSC Mainnet
-          </Button>
+          </CustomWalletInfo>
 
           <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
             <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
