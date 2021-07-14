@@ -11,8 +11,10 @@ import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_DESKTOP_HEIGHT } from "./config";
 import Avatar from "./Avatar";
 import * as IconModule from "./icons";
-import { SvgProps } from "../../components/Svg";
+import { SvgProps, CommunityIcon } from "../../components/Svg";
+
 import { Footer } from "./Footer";
+import { Button } from "../../components/Button";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
@@ -67,9 +69,10 @@ const MobileOnlyOverlay = styled(Overlay)`
 `;
 const ThemeChangeTab = styled.div`
   display: flex;
-  margin: 5px 10px;
+  margin: 5px 15px;
   cursor: pointer;
 `;
+
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -133,6 +136,10 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex style={{ justifyContent: "center", alignItems: "center" }}>
+          <Button size="sm" variant="tertiary">
+            <CommunityIcon style={{ marginRight: "5px" }} /> BSC Mainnet
+          </Button>
+
           <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
             <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
             <MoonIcon color="text" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
