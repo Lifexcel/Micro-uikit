@@ -14,7 +14,7 @@ import * as IconModule from "./icons";
 import { SvgProps, CommunityIcon } from "../../components/Svg";
 
 import { Footer } from "./Footer";
-import { Button } from "../../components/Button";
+import { Tag } from "../../components/Tag";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
@@ -69,13 +69,17 @@ const MobileOnlyOverlay = styled(Overlay)`
 `;
 const ThemeChangeTab = styled.div`
   display: flex;
-  margin: 5px 15px;
+  margin: 10px;
   cursor: pointer;
 `;
 
-const CustomWalletInfo = styled(Button)`
-font-weight:normal;
-`
+const CustomWalletInfo = styled(Tag)`
+  border: none;
+  color: ${({ theme }) => theme.colors.primary};
+  border-radius: 5px;
+  margin:10px;
+`;
+
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -128,6 +132,7 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
+  const walletName = "BSC Mainnet";
 
   return (
     <Wrapper>
@@ -139,8 +144,8 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex style={{ justifyContent: "center", alignItems: "center" }}>
-          <CustomWalletInfo size="sm" variant="tertiary">
-            <CommunityIcon style={{ marginRight: "5px" }} /> BSC Mainnet
+          <CustomWalletInfo size="sm" variant="tertiary" startIcon={<CommunityIcon />}>
+            {isMobile ? `${walletName.slice(0, 3)}` : walletName}
           </CustomWalletInfo>
 
           <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
