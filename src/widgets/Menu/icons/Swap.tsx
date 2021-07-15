@@ -4,7 +4,12 @@ import { SvgProps } from "../../../components/Svg/types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <img src="/images/grap.png" className="icon_sidebar" data-nsfw-filter-status="sfw" style={{visibility: 'visible'}} />
+    <img
+      src="/images/grap.png"
+      className="icon_sidebar"
+      data-nsfw-filter-status="sfw"
+      style={{ visibility: "visible" }}
+    />
   );
 };
 
