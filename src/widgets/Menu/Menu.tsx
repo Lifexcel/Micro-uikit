@@ -144,7 +144,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex style={{ justifyContent: "center", alignItems: "center" }}>
-          <CustomWalletInfo size="sm" variant="tertiary" startIcon={<CommunityIcon />}>
+          <CustomWalletInfo variant="tertiary" startIcon={<CommunityIcon />}>
             {isMobile ? `${walletName.slice(0, 3)}` : walletName}
           </CustomWalletInfo>
 

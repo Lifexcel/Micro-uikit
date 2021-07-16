@@ -172,7 +172,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: inherit;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 5px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: inherit;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
@@ -361,8 +361,22 @@ var Icon$q = function (props) {
             React__default['default'].createElement("rect", { x: "86.556549", y: "138.33929", width: "151.19048", height: "31.372025", id: "rect849" })),
         React__default['default'].createElement("g", { id: "layer1", transform: "translate(-24.500374,-144.27052)" },
             React__default['default'].createElement("g", { id: "g859", transform: "matrix(0.5590066,0,0,0.6000065,21.197589,63.753586)" },
-                React__default['default'].createElement("ellipse", { style: { fill: "currentColor", stroke: "currentColor", strokeWidth: 3.59541, strokeLinecap: "round", paintOrder: "markers fill stroke" }, id: "ellipse880", cx: "30.908314", cy: "159.19344", rx: "23.202297", ry: "23.202295" }),
-                React__default['default'].createElement("path", { id: "ellipse929", style: { fill: "#ffffff", stroke: "#ffffff", strokeWidth: 1.3, strokeLinecap: "round", strokeMiterlimit: 4, strokeDasharray: "none", paintOrder: "markers fill stroke" }, d: "m 20.178814,146.94686 c -0.179956,-0.006 -0.355463,-0.004 -0.526947,0.004 -5.486539,0.29931 -6.774958,8.45205 -12.3283449,18.1117 a 24.223292,25.185895 0 0 0 2.5778159,7.13794 c 6.15173,-3.1655 10.080009,-17.8126 14.786479,-23.90246 -1.77612,-0.88035 -3.249299,-1.30864 -4.509003,-1.35185 z m 17.322796,0 c -0.179954,-0.006 -0.355463,-0.004 -0.526949,0.004 -6.609982,0.36057 -7.120251,12.11768 -16.345141,24.17921 10.341494,8.02589 15.187882,-14.81717 21.382062,-22.83203 -1.776119,-0.88035 -3.250267,-1.30864 -4.509972,-1.35185 z m 14.654262,0.61328 c -4.71404,2.58625 -6.086268,12.95854 -14.202589,23.57059 7.837045,6.08221 12.517452,-5.55782 17.020717,-15.04342 a 24.223292,25.185895 0 0 0 -2.818128,-8.52717 z" })))));
+                React__default['default'].createElement("ellipse", { style: {
+                        fill: "currentColor",
+                        stroke: "currentColor",
+                        strokeWidth: 3.59541,
+                        strokeLinecap: "round",
+                        paintOrder: "markers fill stroke",
+                    }, id: "ellipse880", cx: "30.908314", cy: "159.19344", rx: "23.202297", ry: "23.202295" }),
+                React__default['default'].createElement("path", { id: "ellipse929", style: {
+                        fill: "#ffffff",
+                        stroke: "#ffffff",
+                        strokeWidth: 1.3,
+                        strokeLinecap: "round",
+                        strokeMiterlimit: 4,
+                        strokeDasharray: "none",
+                        paintOrder: "markers fill stroke",
+                    }, d: "m 20.178814,146.94686 c -0.179956,-0.006 -0.355463,-0.004 -0.526947,0.004 -5.486539,0.29931 -6.774958,8.45205 -12.3283449,18.1117 a 24.223292,25.185895 0 0 0 2.5778159,7.13794 c 6.15173,-3.1655 10.080009,-17.8126 14.786479,-23.90246 -1.77612,-0.88035 -3.249299,-1.30864 -4.509003,-1.35185 z m 17.322796,0 c -0.179954,-0.006 -0.355463,-0.004 -0.526949,0.004 -6.609982,0.36057 -7.120251,12.11768 -16.345141,24.17921 10.341494,8.02589 15.187882,-14.81717 21.382062,-22.83203 -1.776119,-0.88035 -3.250267,-1.30864 -4.509972,-1.35185 z m 14.654262,0.61328 c -4.71404,2.58625 -6.086268,12.95854 -14.202589,23.57059 7.837045,6.08221 12.517452,-5.55782 17.020717,-15.04342 a 24.223292,25.185895 0 0 0 -2.818128,-8.52717 z" })))));
 };
 
 var Icon$r = function (props) {
@@ -548,9 +562,36 @@ var Icon$I = function (props) {
             React__default['default'].createElement("rect", { x: "86.556549", y: "138.33929", width: "151.19048", height: "31.372025", id: "rect849" })),
         React__default['default'].createElement("g", { id: "layer1", transform: "translate(-24.500374,-144.27052)" },
             React__default['default'].createElement("g", { id: "g859", transform: "matrix(0.5590066,0,0,0.6000065,21.197589,63.753586)" },
-                React__default['default'].createElement("ellipse", { style: { fill: "currentColor", stroke: "currentColor", strokeWidth: 3.59541, strokeLinecap: "round", paintOrder: "markers fill stroke" }, id: "ellipse880", cx: "30.908314", cy: "159.19344", rx: "23.202297", ry: "23.202295" }),
-                React__default['default'].createElement("path", { id: "ellipse929", style: { fill: "#ffffff", stroke: "#ffffff", strokeWidth: 1.5, strokeLinecap: "round", strokeMiterlimit: 4, strokeDasharray: "none", paintOrder: "markers fill stroke" }, d: "m 20.519901,146.93956 c -0.177316,-0.006 -0.350249,-0.004 -0.519219,0.004 -5.406065,0.29948 -6.675587,8.45674 -12.147521,18.12174 a 23.868,25.199848 0 0 0 2.540007,7.14189 c 6.0615,-3.16725 9.932162,-17.82247 14.5696,-23.91569 -1.750069,-0.88083 -3.201641,-1.30937 -4.442867,-1.35261 z m 17.068716,0 c -0.177314,-0.006 -0.350249,-0.004 -0.519221,0.004 -6.513031,0.36078 -7.015814,12.12438 -16.105401,24.1926 10.189813,8.03034 14.965117,-14.82538 21.068445,-22.84466 -1.750068,-0.88083 -3.202594,-1.30937 -4.443823,-1.35261 z m 14.439323,0.61363 c -4.644897,2.58768 -5.996999,12.9657 -13.994275,23.58363 7.722096,6.08559 12.333855,-5.56089 16.771067,-15.05175 a 23.868,25.199848 0 0 0 -2.776792,-8.53188 z" })),
-            React__default['default'].createElement("g", { "aria-label": "Microfinance", transform: "matrix(1,0,0,1.1142146,-31.976806,-5.0306117)", id: "text847", style: { fontStyle: "normal", fontVariant: "normal", fontWeight: "bold", fontStretch: "normal", fontSize: "16.9333px", lineHeight: 1.25, fontFamily: "sans-serif", letterSpacing: "0.817563px", whiteSpace: "pre", fill: "currentColor", fillOpacity: 1, stroke: "none" } },
+                React__default['default'].createElement("ellipse", { style: {
+                        fill: "currentColor",
+                        stroke: "currentColor",
+                        strokeWidth: 3.59541,
+                        strokeLinecap: "round",
+                        paintOrder: "markers fill stroke",
+                    }, id: "ellipse880", cx: "30.908314", cy: "159.19344", rx: "23.202297", ry: "23.202295" }),
+                React__default['default'].createElement("path", { id: "ellipse929", style: {
+                        fill: "#ffffff",
+                        stroke: "#ffffff",
+                        strokeWidth: 1.5,
+                        strokeLinecap: "round",
+                        strokeMiterlimit: 4,
+                        strokeDasharray: "none",
+                        paintOrder: "markers fill stroke",
+                    }, d: "m 20.519901,146.93956 c -0.177316,-0.006 -0.350249,-0.004 -0.519219,0.004 -5.406065,0.29948 -6.675587,8.45674 -12.147521,18.12174 a 23.868,25.199848 0 0 0 2.540007,7.14189 c 6.0615,-3.16725 9.932162,-17.82247 14.5696,-23.91569 -1.750069,-0.88083 -3.201641,-1.30937 -4.442867,-1.35261 z m 17.068716,0 c -0.177314,-0.006 -0.350249,-0.004 -0.519221,0.004 -6.513031,0.36078 -7.015814,12.12438 -16.105401,24.1926 10.189813,8.03034 14.965117,-14.82538 21.068445,-22.84466 -1.750068,-0.88083 -3.202594,-1.30937 -4.443823,-1.35261 z m 14.439323,0.61363 c -4.644897,2.58768 -5.996999,12.9657 -13.994275,23.58363 7.722096,6.08559 12.333855,-5.56089 16.771067,-15.05175 a 23.868,25.199848 0 0 0 -2.776792,-8.53188 z" })),
+            React__default['default'].createElement("g", { "aria-label": "Microfinance", transform: "matrix(1,0,0,1.1142146,-31.976806,-5.0306117)", id: "text847", style: {
+                    fontStyle: "normal",
+                    fontVariant: "normal",
+                    fontWeight: "bold",
+                    fontStretch: "normal",
+                    fontSize: "16.9333px",
+                    lineHeight: 1.25,
+                    fontFamily: "sans-serif",
+                    letterSpacing: "0.817563px",
+                    whiteSpace: "pre",
+                    fill: "currentColor",
+                    fillOpacity: 1,
+                    stroke: "none",
+                } },
                 React__default['default'].createElement("path", { d: "m 101.03428,153.78861 h -3.158456 v -8.24341 l -2.282027,5.34953 h -2.191076 l -2.282027,-5.34953 v 8.24341 h -2.993093 v -12.31137 h 3.687623 l 2.769851,6.17635 2.761583,-6.17635 h 3.687622 z", id: "path839" }),
                 React__default['default'].createElement("path", { d: "m 107.80496,153.78861 h -2.97656 v -9.28521 h 2.97656 z m 0.0827,-10.60812 h -3.14192 v -2.25722 h 3.14192 z", id: "path841" }),
                 React__default['default'].createElement("path", { d: "m 116.27062,154.03665 q -1.21543,0 -2.22415,-0.28938 -1.00046,-0.28939 -1.7446,-0.89297 -0.73587,-0.60358 -1.14101,-1.52135 -0.40514,-0.91777 -0.40514,-2.14974 0,-1.29811 0.42995,-2.24068 0.43821,-0.94258 1.21542,-1.5627 0.75241,-0.58704 1.73633,-0.85989 0.98392,-0.27285 2.04225,-0.27285 0.95084,0 1.75286,0.2067 0.80201,0.20671 1.49654,0.53744 v 2.53834 h -0.42167 q -0.17364,-0.14883 -0.42168,-0.34727 -0.23978,-0.19843 -0.59531,-0.3886 -0.339,-0.1819 -0.74414,-0.29766 -0.40515,-0.12402 -0.94258,-0.12402 -1.19062,0 -1.83554,0.76068 -0.63666,0.7524 -0.63666,2.05051 0,1.33945 0.65319,2.03398 0.66146,0.69453 1.86862,0.69453 0.56224,0 1.00872,-0.12402 0.45475,-0.13229 0.75241,-0.30592 0.28112,-0.16537 0.49609,-0.34727 0.21497,-0.1819 0.39688,-0.35553 h 0.42167 v 2.53834 q -0.70279,0.33073 -1.47174,0.5209 -0.76067,0.19843 -1.68671,0.19843 z", id: "path843" }),
@@ -824,7 +865,7 @@ var getBottom = function (_a) {
     }
     return "auto";
 };
-var DropdownContent = styled__default['default'].div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  color:", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  color:", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
+var DropdownContent = styled__default['default'].div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 500px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 }, function (_a) {
@@ -937,7 +978,7 @@ var BackgroundImage = function (_a) {
     return React__default['default'].createElement(Wrapper, __assign({ ref: imgRef }, otherProps));
 };
 
-var StyledImage = styled__default['default'].img(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n  color:", ";\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n  color:", ";\n"])), function (_a) {
+var StyledImage = styled__default['default'].img(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n  color: ", ";\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -1097,7 +1138,7 @@ var getColor$1 = function (color, theme) {
 
 var getThemeTextColor = function (_a) {
     var outline = _a.outline, _b = _a.variant, variant = _b === void 0 ? "primary" : _b, theme = _a.theme;
-    return outline ? getColor$1(variant, theme) : theme.colors.background;
+    return outline ? getColor$1(variant, theme) : theme.colors.primary;
 };
 var StyledTag = styled__default['default'].div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"], ["\n  align-items: center;\n  background-color: ",
     ";\n  border: 2px solid ", ";\n  border-radius: 16px;\n  color: ", ";\n  display: inline-flex;\n  font-size: 14px;\n  font-weight: 400;\n  height: 28px;\n  line-height: 1.5;\n  padding: 0 8px;\n  white-space: nowrap;\n\n  svg {\n    fill: ", ";\n  }\n"])), function (_a) {
@@ -1114,7 +1155,7 @@ var Tag = function (_a) {
     return (React__default['default'].createElement(StyledTag, __assign({}, props),
         React__default['default'].isValidElement(startIcon) &&
             React__default['default'].cloneElement(startIcon, {
-                mr: "0.5rem",
+                mr: "0.5rem"
             }),
         children,
         React__default['default'].isValidElement(endIcon) &&
@@ -1886,7 +1927,7 @@ var useModal = function (modal, closeOnOverlayClick) {
 };
 
 var Icon$J = function (props) {
-    return (React__default['default'].createElement("img", { src: "/images/farm-ico.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: 'visible' } }));
+    return (React__default['default'].createElement("img", { src: "/images/farm-ico.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: "visible" } }));
 };
 
 var Icon$K = function (props) {
@@ -1905,7 +1946,7 @@ var Icon$M = function (props) {
 };
 
 var Icon$N = function (props) {
-    return (React__default['default'].createElement("img", { src: "/images/home-ico.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: 'visible' } }));
+    return (React__default['default'].createElement("img", { src: "/images/home-ico.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: "visible" } }));
 };
 
 var Icon$O = function (props) {
@@ -1940,7 +1981,7 @@ var Icon$T = function (props) {
 };
 
 var Icon$U = function (props) {
-    return (React__default['default'].createElement("img", { src: "/images/pool.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: 'visible' } }));
+    return (React__default['default'].createElement("img", { src: "/images/pool.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: "visible" } }));
 };
 
 var Icon$V = function (props) {
@@ -2079,11 +2120,11 @@ var Icon$16 = function (props) {
 };
 
 var Icon$17 = function (props) {
-    return (React__default['default'].createElement("img", { src: "/images/grap.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: 'visible' } }));
+    return (React__default['default'].createElement("img", { src: "/images/grap.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: "visible" } }));
 };
 
 var Icon$18 = function (props) {
-    return (React__default['default'].createElement("img", { src: "/images/add_pool.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: 'visible' } }));
+    return (React__default['default'].createElement("img", { src: "/images/add_pool.png", className: "icon_sidebar", "data-nsfw-filter-status": "sfw", style: { visibility: "visible" } }));
 };
 
 var IconModule = /*#__PURE__*/Object.freeze({
@@ -2273,12 +2314,12 @@ var socials = [
         href: "https://twitter.com/",
     },
 ];
-var MENU_HEIGHT = 64;
+var MENU_HEIGHT = 75;
 var MENU_ENTRY_HEIGHT = 48;
 var SIDEBAR_WIDTH_FULL = 240;
 var SIDEBAR_WIDTH_REDUCED = 56;
-var FOOTER_DESKTOP_HEIGHT = 80;
-var FOOTER_MOBILE_HEIGHT = 150;
+var FOOTER_DESKTOP_HEIGHT = 90;
+var FOOTER_MOBILE_HEIGHT = 160;
 
 var rainbowAnimation = styled.keyframes(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
 var LinkLabel = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"], ["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"])), function (_a) {
@@ -2419,18 +2460,18 @@ var PanelFooter = function (_a) {
 };
 var templateObject_1$C, templateObject_2$c;
 
-var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  padding-top: ", ";\n  padding-bottom:", "px;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"], ["\n  position: fixed;\n  padding-top: ", ";\n  padding-bottom:", "px;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"])), function (_a) {
+var StyledPanel = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  padding-top: ", ";\n  padding-bottom: ", "px;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"], ["\n  position: fixed;\n  padding-top: ", ";\n  padding-bottom: ", "px;\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", "px;\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    border-right: 2px solid rgba(133, 133, 133, 0.1);\n    width: ", ";\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? "80px" : 0);
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT;
+    return (isMobile ? "0" : FOOTER_DESKTOP_HEIGHT);
 }, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 }, function (_a) {
     var isPushed = _a.isPushed;
-    return (isPushed ? SIDEBAR_WIDTH_FULL + "px" : 0);
+    return (isPushed ? SIDEBAR_WIDTH_FULL : 0);
 }, function (_a) {
     var isPushed = _a.isPushed;
     return (isPushed ? "2px solid rgba(133, 133, 133, 0.1)" : 0);
@@ -2689,14 +2730,14 @@ var templateObject_1$G, templateObject_2$e;
 var Icons$2 = IconModule;
 var Footer = function (_a) {
     var isMobile = _a.isMobile;
-    var StyledFooter = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n                                display: flex;\n                                background:", ";\n                                color:", ";\n                                flex-direction:", ";\n                                justify-content: center;\n                                align-items:center;\n                                width:100%;\n                                height:", ";\n                                position:fixed;\n                                z-index:15;\n                                left:0;\n                                bottom:0px;\n                                padding:10px;\n                                margin:10px 0 0 0;\n                                "], ["\n                                display: flex;\n                                background:", ";\n                                color:", ";\n                                flex-direction:", ";\n                                justify-content: center;\n                                align-items:center;\n                                width:100%;\n                                height:", ";\n                                position:fixed;\n                                z-index:15;\n                                left:0;\n                                bottom:0px;\n                                padding:10px;\n                                margin:10px 0 0 0;\n                                "])), function (_a) {
+    var StyledFooter = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n    display: flex;\n    background: ", ";\n    color: ", ";\n    flex-direction: ", ";\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    width: auto;\n    height: ", "px;\n    position: ", ";\n    z-index: ", ";\n    left: 0px;\n    right: 0px;\n    bottom: ", ";\n    padding: 15px 10px;\n    margin: 10px -1rem 0 -1rem;\n  "], ["\n    display: flex;\n    background: ", ";\n    color: ", ";\n    flex-direction: ", ";\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    width: auto;\n    height: ", "px;\n    position: ", ";\n    z-index: ", ";\n    left: 0px;\n    right: 0px;\n    bottom: ", ";\n    padding: 15px 10px;\n    margin: 10px -1rem 0 -1rem;\n  "])), function (_a) {
         var theme = _a.theme;
         return theme.colors.footer;
     }, function (_a) {
         var theme = _a.theme;
         return theme.colors.primary;
-    }, isMobile ? 'column' : 'row-reverse', isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT);
-    var SocialWrapper = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n                                 display:flex;\n                                 padding:10px;\n                                 justify-content:center;\n                                 align-items:center;\n                                    "], ["\n                                 display:flex;\n                                 padding:10px;\n                                 justify-content:center;\n                                 align-items:center;\n                                    "])));
+    }, isMobile ? "column" : "row-reverse", isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT, isMobile ? "absolute" : "fixed", isMobile ? 5 : 15, isMobile ? "none" : "0");
+    var SocialWrapper = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n    display: flex;\n    padding: 10px;\n    justify-content: center;\n    align-items: center;\n  "], ["\n    display: flex;\n    padding: 10px;\n    justify-content: center;\n    align-items: center;\n  "])));
     return (React__default['default'].createElement(StyledFooter, null,
         React__default['default'].createElement(SocialWrapper, null, socials.map(function (social, index) {
             var Icon = Icons$2[social.icon];
@@ -2708,37 +2749,42 @@ var Footer = function (_a) {
         React__default['default'].createElement("p", { className: "ps-2" },
             "Made With ",
             React__default['default'].createElement("span", { className: "text-red" }, "\u2764\uFE0F"),
-            " In Hong Kong \u00A9 2020 Kash Finance. All Rights Reserved")));
+            " In Hong Kong \u00A9 2020 Micro Finance. All Rights Reserved")));
 };
 var templateObject_1$H, templateObject_2$f;
 
 var Icons$3 = IconModule;
 var MoonIcon = Icons$3.MoonIcon, SunIcon = Icons$3.SunIcon;
 var Wrapper$1 = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  position: fixed;\n  top: ", "px;\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", "px;\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
-    return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
+    return (showMenu ? 0 : -MENU_HEIGHT);
 }, MENU_HEIGHT, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 });
 var BodyWrapper = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
-var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  margin-bottom:", "px;\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  ", " {\n    margin-left: ", ";\n  }\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  margin-bottom:", "px;\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  ", " {\n    margin-left: ", ";\n  }\n"])), function (_a) {
+var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", "px;\n  margin-bottom: ", "px;\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  ", " {\n    margin-left: ", "px;\n  }\n"], ["\n  flex-grow: 1;\n  margin-top: ", "px;\n  margin-bottom: ", "px;\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n  ", " {\n    margin-left: ", "px;\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
-    return (showMenu ? MENU_HEIGHT + "px" : 0);
+    return (showMenu ? MENU_HEIGHT + 10 : 0);
 }, function (_a) {
     var isMobile = _a.isMobile;
-    return isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT;
+    return (isMobile ? "20" : FOOTER_DESKTOP_HEIGHT);
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
     var isPushed = _a.isPushed;
-    return (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED) + "px";
+    return (isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED);
 });
 var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  position: fixed;\n  height: 100%;\n\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
+});
+var ThemeChangeTab = styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  margin: 10px;\n  cursor: pointer;\n"], ["\n  display: flex;\n  margin: 10px;\n  cursor: pointer;\n"])));
+var CustomWalletInfo = styled__default['default'](Tag)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  border: none;\n  color: ", ";\n  border-radius: 5px;\n  margin:10px;\n"], ["\n  border: none;\n  color: ", ";\n  border-radius: 5px;\n  margin:10px;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.primary;
 });
 var Menu = function (_a) {
     var _b;
@@ -2778,23 +2824,24 @@ var Menu = function (_a) {
     }, []);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
+    var walletName = "BSC Mainnet";
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-            React__default['default'].createElement(Flex, { style: { justifyContent: 'center', alignItems: 'center' } },
+            React__default['default'].createElement(Flex, { style: { justifyContent: "center", alignItems: "center" } },
+                React__default['default'].createElement(CustomWalletInfo, { variant: "tertiary", startIcon: React__default['default'].createElement(Icon$m, null) }, isMobile ? "" + walletName.slice(0, 3) : walletName),
+                React__default['default'].createElement(ThemeChangeTab, { onClick: function () { return toggleTheme(!isDark); } },
+                    React__default['default'].createElement(SunIcon, { color: "text", width: "24px", style: { display: isDark ? "block" : "none" }, key: "sun" }),
+                    React__default['default'].createElement(MoonIcon, { color: "text", width: "24px", style: { display: !isDark ? "block" : "none" }, key: "moon" })),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
-                profile && React__default['default'].createElement(Avatar, { profile: profile }),
-                React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-                    React__default['default'].createElement(Flex, { alignItems: "center" },
-                        React__default['default'].createElement(SunIcon, { color: "text", width: "24px", style: { display: isDark ? "block" : "none" }, key: "sun" }),
-                        React__default['default'].createElement(MoonIcon, { color: "text", width: "24px", style: { display: !isDark ? "block" : "none" }, key: "moon" }))))),
+                profile && React__default['default'].createElement(Avatar, { profile: profile }))),
         React__default['default'].createElement(BodyWrapper, null,
             React__default['default'].createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
             React__default['default'].createElement(Inner, { isPushed: isPushed, showMenu: showMenu, isMobile: isMobile }, children),
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })),
         React__default['default'].createElement(Footer, { isDark: isDark, isMobile: isMobile })));
 };
-var templateObject_1$I, templateObject_2$g, templateObject_3$7, templateObject_4$2, templateObject_5$1;
+var templateObject_1$I, templateObject_2$g, templateObject_3$7, templateObject_4$2, templateObject_5$1, templateObject_6, templateObject_7;
 
 var ToastAction = function (_a) {
     var action = _a.action;
