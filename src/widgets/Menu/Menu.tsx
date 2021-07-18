@@ -77,7 +77,7 @@ const CustomWalletInfo = styled(Tag)`
   border: none;
   color: ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
-  margin:10px;
+  margin: 10px;
 `;
 
 const Menu: React.FC<NavProps> = ({

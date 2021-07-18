@@ -6,7 +6,7 @@ const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...props }) => 
   <StyledTag {...props}>
     {React.isValidElement(startIcon) &&
       React.cloneElement(startIcon, {
-        mr: "0.5rem"
+        mr: "0.5rem",
       })}
     {children}
     {React.isValidElement(endIcon) &&
