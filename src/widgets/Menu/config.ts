@@ -117,12 +117,12 @@ export const socials = [
   {
     label: "Telegram",
     icon: "TelegramIcon",
-    href: "https://t.me/",
+    href: "https://twitter.com/Microfinance88",
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/",
+    href: "https://t.me/microfficial",
   },
   // {
   //   label: "Reddit",

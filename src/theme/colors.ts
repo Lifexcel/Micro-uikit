@@ -9,6 +9,7 @@ export const baseColors = {
   info: "#1a73e8",
   success: "#31D0AA",
   light: "#ffffff",
+  analogous: "#fed75e",
   dark: "#000000",
   warning: "#FFB237",
 };
