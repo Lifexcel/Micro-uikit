@@ -8,6 +8,7 @@ export declare const baseColors: {
     info: string;
     success: string;
     light: string;
+    analogous: string;
     dark: string;
     warning: string;
 };
