@@ -1,19 +1,67 @@
 import styled from "styled-components";
+import { ToggleProps, scales } from "./types";
 
-export const Handle = styled.div`
+const getWidth = ({ scale = scales.MD }: ToggleProps) => {
+  switch (scale) {
+    case scales.SM:
+      return "64px";
+    case scales.LG:
+      return "96px";
+    case scales.MD:
+    default:
+      return "72px";
+  }
+};
+const getHeight = ({ scale = scales.MD }: ToggleProps) => {
+  switch (scale) {
+    case scales.SM:
+      return "32px";
+    case scales.LG:
+      return "48px";
+    case scales.MD:
+    default:
+      return "40px";
+  }
+};
+
+const getHandleHeight = ({ scale = scales.MD }: ToggleProps) => {
+  switch (scale) {
+    case scales.SM:
+      return 24;
+    case scales.LG:
+      return 40;
+    case scales.MD:
+    default:
+      return 32;
+  }
+};
+
+const getHandleScrollPositionOffset = ({ scale = scales.MD }: ToggleProps) => {
+  switch (scale) {
+    case scales.SM:
+      return 30;
+    case scales.LG:
+      return 48;
+    case scales.MD:
+    default:
+      return 38;
+  }
+};
+
+export const Handle = styled.div<ToggleProps>`
   background-color: ${({ theme }) => theme.toggle.handleBackground};
   border-radius: 50%;
   cursor: pointer;
-  height: 32px;
+  height: ${getHandleHeight}px;
   left: 4px;
   position: absolute;
   top: 4px;
   transition: left 200ms ease-in;
-  width: 32px;
+  width: ${getHandleHeight}px;
   z-index: 1;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<ToggleProps>`
   cursor: pointer;
   opacity: 0;
   height: 100%;
@@ -22,7 +70,7 @@ export const Input = styled.input`
   z-index: 3;
 
   &:checked + ${Handle} {
-    left: calc(100% - 36px);
+    left: calc(100% - ${getHandleScrollPositionOffset}px);
   }
 
   &:focus + ${Handle} {
@@ -34,17 +82,17 @@ export const Input = styled.input`
   }
 `;
 
-const StyledToggle = styled.div<{ checked: boolean }>`
+const StyledToggle = styled.div<ToggleProps>`
   align-items: center;
   background-color: ${({ theme, checked }) => theme.colors[checked ? "primary" : "input"]};
-  border-radius: 24px;
+  border-radius: 5px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
   cursor: pointer;
   display: inline-flex;
-  height: 40px;
+  height: ${getHeight};
   position: relative;
   transition: background-color 200ms;
-  width: 72px;
+  width: ${getWidth};
 `;
 
 export default StyledToggle;
