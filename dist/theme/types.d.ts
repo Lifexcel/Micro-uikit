@@ -26,11 +26,15 @@ export declare type Gradients = {
     bubblegum: string;
 };
 export declare type Colors = {
+    light: string;
+    dark: string;
+    analogous: string;
     primary: string;
     primaryBright: string;
     primaryDark: string;
     secondary: string;
     tertiary: string;
+    info: string;
     success: string;
     failure: string;
     warning: string;
@@ -44,6 +48,8 @@ export declare type Colors = {
     textSubtle: string;
     borderColor: string;
     card: string;
+    footer: string;
+    footerShadow: string;
     gradients: Gradients;
     binance: string;
 };

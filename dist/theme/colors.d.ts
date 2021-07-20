@@ -5,7 +5,11 @@ export declare const baseColors: {
     primaryBright: string;
     primaryDark: string;
     secondary: string;
+    info: string;
     success: string;
+    light: string;
+    analogous: string;
+    dark: string;
     warning: string;
 };
 export declare const brandColors: {

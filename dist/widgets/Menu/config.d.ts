@@ -28,7 +28,9 @@ export declare const socials: {
     icon: string;
     href: string;
 }[];
-export declare const MENU_HEIGHT = 64;
+export declare const MENU_HEIGHT = 75;
 export declare const MENU_ENTRY_HEIGHT = 48;
 export declare const SIDEBAR_WIDTH_FULL = 240;
 export declare const SIDEBAR_WIDTH_REDUCED = 56;
+export declare const FOOTER_DESKTOP_HEIGHT = 90;
+export declare const FOOTER_MOBILE_HEIGHT = 160;
