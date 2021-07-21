@@ -1,4 +1,4 @@
-import { MediaQueries, Breakpoints, Spacing } from "./types";
+import { MediaQueries, Breakpoints, Spacing, ZIndices } from "./types";
 
 export const breakpointMap: { [key: string]: number } = {
   xs: 370,
@@ -51,9 +51,13 @@ const radii = {
   circle: "50%",
 };
 
-const zIndices = {
-  dropdown: 10,
+const zIndices: ZIndices = {
+  dropdown: 16,
   modal: 100,
+  menu: 12,
+  panel: 11,
+  footerMobile: 5,
+  footerDesktop: 15,
 };
 
 export default {

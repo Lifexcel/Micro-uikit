@@ -23,7 +23,7 @@ export const Footer: React.FC<Props> = ({ isMobile }: Props) => {
     width: auto;
     height: ${isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT}px;
     position: ${isMobile ? "absolute" : "fixed"};
-    z-index: ${isMobile ? 5 : 15};
+    z-index: ${({ theme }) => (isMobile ? theme.zIndices.footerMobile : theme.zIndices.footerDesktop)};
     left: 0px;
     right: 0px;
     bottom: ${isMobile ? "none" : "0"};
