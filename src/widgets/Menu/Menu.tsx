@@ -149,8 +149,8 @@ const Menu: React.FC<NavProps> = ({
           </CustomWalletInfo>
 
           <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
-            <SunIcon color="text" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
-            <MoonIcon color="text" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
+            <SunIcon color="secondary" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
+            <MoonIcon color="secondary" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
           </ThemeChangeTab>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
