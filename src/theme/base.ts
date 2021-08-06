@@ -57,7 +57,7 @@ const zIndices: ZIndices = {
   menu: 12,
   panel: 11,
   footerMobile: 5,
-  footerDesktop: 15,
+  footerDesktop: 5,
 };
 
 export default {

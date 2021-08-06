@@ -8,18 +8,14 @@ import IconButton from "../../components/Button/IconButton";
 import MenuButton from "./MenuButton";
 import * as IconModule from "./icons";
 import { PanelProps, PushedProps } from "./types";
+import { FOOTER_DESKTOP_HEIGHT, FOOTER_MOBILE_HEIGHT } from "./config";
 
-interface Props extends PanelProps, PushedProps {}
+interface Props extends PanelProps, PushedProps {
+  isMobile: boolean;
+}
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const { LanguageIcon } = Icons;
-
-const Container = styled.div`
-  flex: none;
-  padding: 8px 4px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-top: solid 2px rgba(133, 133, 133, 0.1);
-`;
 
 // const PriceLink = styled.a`
 //   display: flex;
@@ -58,8 +54,19 @@ const PanelFooter: React.FC<Props> = ({
   currentLang,
   langs,
   setLang,
+  isMobile,
   // priceLink,
 }) => {
+  const Container = styled.div`
+    flex: none;
+    padding: ${isMobile ? "30px 4px" : "10px 4px"};
+    background-color: ${({ theme }) => theme.nav.background};
+    border-top: solid 2px rgba(133, 133, 133, 0.1);
+    height: ${isMobile ? FOOTER_MOBILE_HEIGHT : FOOTER_DESKTOP_HEIGHT}px;
+    background: ${({ theme }) => theme.colors.footer};
+    opacity: 0.9;
+    margin-right: -2px;
+  `;
   if (!isPushed) {
     return (
       <Container>

@@ -57,7 +57,7 @@ export const darkColors: Colors = {
   text: "#d1e1e3",
   textDisabled: "#666171",
   textSubtle: "#9ab4b6",
-  borderColor: "#524B63",
+  borderColor: "#261f34",
   card: "#030503",
   footerShadow: "#070d2e",
   footer: "#0c6772",
