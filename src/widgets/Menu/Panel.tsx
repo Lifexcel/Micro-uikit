@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PanelBody from "./PanelBody";
 import PanelFooter from "./PanelFooter";
-import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_DESKTOP_HEIGHT } from "./config";
+import { SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
@@ -13,7 +13,7 @@ interface Props extends PanelProps, PushedProps {
 const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean; isMobile: boolean }>`
   position: fixed;
   padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
-  padding-bottom: ${({ isMobile }) => (isMobile ? "0" : FOOTER_DESKTOP_HEIGHT)}px;
+  padding-bottom: ${({ isMobile }) => (isMobile ? "0" : "0")}px;
   top: 0;
   left: 0;
   display: flex;

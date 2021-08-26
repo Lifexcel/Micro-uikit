@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import React from "react";
 import { Link } from "../../components/Link";
-import { FOOTER_MOBILE_HEIGHT, FOOTER_DESKTOP_HEIGHT, socials } from "./config";
+import {
+  FOOTER_MOBILE_HEIGHT,
+  FOOTER_DESKTOP_HEIGHT,
+  socials,
+  SIDEBAR_WIDTH_FULL,
+  SIDEBAR_WIDTH_REDUCED,
+} from "./config";
 import * as IconModule from "./icons";
 import { SvgProps } from "../../components/Svg";
 
@@ -9,9 +15,10 @@ const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 interface Props {
   isDark: boolean;
   isMobile: boolean;
+  isPushed: boolean;
 }
 
-export const Footer: React.FC<Props> = ({ isMobile }: Props) => {
+export const Footer: React.FC<Props> = ({ isMobile, isPushed }: Props) => {
   const StyledFooter = styled.div`
     display: flex;
     background: ${({ theme }) => theme.colors.footer};
@@ -29,13 +36,18 @@ export const Footer: React.FC<Props> = ({ isMobile }: Props) => {
     bottom: ${isMobile ? "none" : "0"};
     padding: 15px 10px;
     margin: 10px -1rem 0 -1rem;
+    ${({ theme }) => theme.mediaQueries.nav} {
+      margin-left: ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px;
+    }
   `;
+
   const SocialWrapper = styled.div`
     display: flex;
     padding: 10px;
     justify-content: center;
     align-items: center;
   `;
+
   return (
     <StyledFooter>
       <SocialWrapper>

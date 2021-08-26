@@ -135,5 +135,5 @@ export const MENU_HEIGHT = 75;
 export const MENU_ENTRY_HEIGHT = 48;
 export const SIDEBAR_WIDTH_FULL = 240;
 export const SIDEBAR_WIDTH_REDUCED = 56;
-export const FOOTER_DESKTOP_HEIGHT = 90;
-export const FOOTER_MOBILE_HEIGHT = 160;
+export const FOOTER_DESKTOP_HEIGHT = 80;
+export const FOOTER_MOBILE_HEIGHT = 110;
