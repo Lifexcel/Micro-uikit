@@ -4,7 +4,7 @@ export declare type ButtonMenuItemProps = {
     size?: Sizes;
 } & ButtonProps;
 export interface ButtonMenuProps {
-    variant?: typeof variants.PRIMARY | typeof variants.SUBTLE;
+    variant?: typeof variants.PRIMARY | typeof variants.SUBTLE | typeof variants.SECONDARY;
     activeIndex?: number;
     onClick?: (index: number) => void;
     size?: Sizes;

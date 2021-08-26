@@ -1,4 +1,4 @@
-import { MediaQueries, Breakpoints, Spacing } from "./types";
+import { MediaQueries, Breakpoints, Spacing, ZIndices } from "./types";
 export declare const breakpointMap: {
     [key: string]: number;
 };
@@ -45,9 +45,6 @@ declare const _default: {
         card: string;
         circle: string;
     };
-    zIndices: {
-        dropdown: number;
-        modal: number;
-    };
+    zIndices: ZIndices;
 };
 export default _default;
