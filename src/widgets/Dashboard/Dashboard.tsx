@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Input } from "../../components/Input";
 import { Text } from "../../components/Text";
 import {
+  CheckmarkCircleIcon,
   VerifiedIcon,
   OpenNewIcon,
   BlockIcon,
@@ -11,6 +12,12 @@ import {
   ArrowDropDownIcon,
   ArrowDownIcon,
   ArrowForwardIcon,
+  ArrowDropUpIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  BinanceIcon,
+  GooseRoundIcon,
+  SvgProps,
 } from "../../components/Svg/index";
 import { Profile } from "../Menu/types";
 import { Flex } from "../../components/Flex";
@@ -78,6 +85,7 @@ const DashboardHeader = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 5px;
+  padding: 0 5px;
 
   ${({ theme }) => `${theme.mediaQueries.md} {
     flex-direction:row;
@@ -90,7 +98,7 @@ const MainBar = styled.div`
   justify-content: center;
   box-shadow: ${({ theme }) => `1px 1px 5px 0px ${theme.colors.tertiary}`};
   margin-bottom: 10px;
-  padding: 0 10px;
+  padding: 0 5px;
   border-radius: 5px;
 
   ${({ theme }) => `${theme.mediaQueries.md} {
@@ -106,24 +114,6 @@ const StyledAvatar = styled.img`
   border-radius: 50%;
 `;
 const Address = styled.div``;
-
-const Container = styled.div`
-  border: ${({ theme }) => `1px solid ${theme.colors.tertiary}`};
-  background-color: ${({ theme }) => theme.colors.tertiary};
-  border-radius: 5px;
-  display: inline-block;
-  margin: 0 1rem 0 0;
-
-  img {
-    margin: 0 10px;
-    object-fit: contain;
-    height: 80px;
-    width: 80px;
-  }
-  .description {
-    padding: 5px;
-  }
-`;
 
 const TransactButtons = styled(Flex)`
   height: 80px;
@@ -229,26 +219,71 @@ const StyledAssetIcon = styled.img`
   margin-right: 10px;
 `;
 
-const TokenDesc: React.FC = () => {
+interface TokenDescriptionProps {
+  title: string;
+  amount: number;
+  rate?: number;
+  icon: string;
+}
+const TokenDesc: React.FC<TokenDescriptionProps> = ({ icon, title, amount, rate }) => {
+  const StyledImage = styled.div`
+    background-color: ${({ theme }) => theme.colors.background};
+    display: block;
+    margin: 10px;
+    box-sizing: content-box;
+
+    img {
+      border-radius: 5px;
+      object-fit: fill;
+      height: 60px;
+      width: 60px;
+    }
+  `;
+
+  const Container = styled.div`
+    border: ${({ theme }) => `1px solid ${theme.colors.tertiary}`};
+    background-color: ${({ theme }) => theme.colors.tertiary};
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 1rem 0 0;
+
+    .description {
+      padding: 5px;
+    }
+  `;
   return (
     <Container className="img-desc-item">
       <Flex>
-        <img
-          src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201905/tiger_shroff_0.png?qMIrZn27cP8pqFXpOXoDacJphGoxa_3c&size=770:433"
-          width="50px"
-          height="50px"
-          alt="token"
-        />
+        <StyledImage>
+          <img src={icon} width="50px" height="50px" alt="token" />
+        </StyledImage>
         <Flex className="description" flexDirection="column" justifyContent="space-around">
-          <Text>Title</Text>
+          <Text>{title}</Text>
           <Flex alignItems="baseline">
             <Text fontSize="18px" className="value" bold>
-              1,243,423
+              ${amount}
             </Text>
             <Text fontSize="14px" ml="1">
-              {" "}
               MICRO
             </Text>
+            {rate && rate < 0 && (
+              <>
+                {" "}
+                <ArrowDropDownIcon color="failure" />{" "}
+                <Text fontSize="11px" ml="1" color="failure">
+                  {rate}
+                </Text>
+              </>
+            )}
+            {rate && rate > 0 && (
+              <>
+                {" "}
+                <ArrowDropUpIcon color="success" />{" "}
+                <Text fontSize="11px" ml="1" color="success">
+                  {rate}
+                </Text>
+              </>
+            )}
           </Flex>
         </Flex>
       </Flex>
@@ -263,6 +298,10 @@ const TransactionsTable = <T extends DataType>({ _columns, _data }: { _columns: 
   const TransactionContaner = styled.div`
     width: 100%;
     overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   `;
 
   const StyledTable = styled.table`
@@ -336,22 +375,86 @@ const TransactionsTable = <T extends DataType>({ _columns, _data }: { _columns: 
 };
 
 export const Dashboard: React.FC<Props> = ({ profile }) => {
+  const iconsMap: { [key: string]: React.FC<SvgProps> } = {
+    binance: <BinanceIcon />,
+    goose: <GooseRoundIcon />,
+  };
   const transactionColumns = [
-    { name: "dir", label: "DIR" },
-    { name: "id", label: "ID" },
+    {
+      name: "dir",
+      label: "DIR",
+      render: (data: any) => (
+        <>
+          {data.value === "down" && <ChevronDownIcon color="warning" />}
+          {data.value === "up" && <ChevronUpIcon color="success" />}
+        </>
+      ),
+    },
+    {
+      name: "id",
+      label: "ID",
+      render: (data: any) => (
+        <Flex alignItems="center">
+          {data.value ? iconsMap[data.value] : ""}
+          <Text textTransform="uppercase" pl="2">
+            {data?.value}
+          </Text>
+        </Flex>
+      ),
+    },
     { name: "time", label: "TIME" },
     { name: "amount", label: "AMOUNT" },
     { name: "txhash", label: "TxHASH" },
-    { name: "status", label: "STATUS" },
+    {
+      name: "status",
+      label: "STATUS",
+      render: (data: any) => {
+        if (data.value === "completed")
+          return (
+            <Text color="success" textTransform="capitalize">
+              {data.value}
+            </Text>
+          );
+        if (data.value === "pending")
+          return (
+            <Text color="text" textTransform="capitalize">
+              {data.value}
+            </Text>
+          );
+        if (data.value === "canceled")
+          return (
+            <Text color="failure" textTransform="capitalize">
+              {data.value}
+            </Text>
+          );
+        return <></>;
+      },
+    },
   ];
   const transactionData = [
     {
-      dir: "Thi is first",
-      id: "Thisi s second",
-      time: "2342",
+      dir: "down",
+      id: "binance",
+      time: new Date().toLocaleString(),
       amount: "23424",
       txhash: "k9sf9s77f9s7",
-      status: "Completed",
+      status: "completed",
+    },
+    {
+      dir: "up",
+      id: "goose",
+      time: new Date().toLocaleString(),
+      amount: "23424",
+      txhash: "k9sf9s77f9s7",
+      status: "pending",
+    },
+    {
+      dir: "up",
+      id: "binance",
+      time: new Date().toLocaleString(),
+      amount: "23424",
+      txhash: "k9sf9s77f9s7",
+      status: "canceled",
     },
   ];
   return (
@@ -378,7 +481,7 @@ export const Dashboard: React.FC<Props> = ({ profile }) => {
           <Button variant="text" size="sm">
             <BlockIcon />
           </Button>
-          <Button variant="secondary" size="sm">
+          <Button variant="secondary" size="sm" startIcon={<CheckmarkCircleIcon size="sm" color="primary" />}>
             Active
           </Button>
         </Flex>
@@ -405,13 +508,22 @@ export const Dashboard: React.FC<Props> = ({ profile }) => {
       <DashboardMain className="dashboard-main-content">
         <div className="content-left">
           <Flex className="token-description-container" justifyContent="space-between">
-            <TokenDesc />
-            <TokenDesc />
-            <TokenDesc />
-            <TokenDesc />
-            <TokenDesc />
-            <TokenDesc />
-            <TokenDesc />
+            <TokenDesc
+              icon="https://cdn3.iconfinder.com/data/icons/tiny-charts-and-graphs/32/flat_bar_chart-512.png"
+              title="Total Net Wort"
+              amount={8909}
+              rate={2.4}
+            />
+            <TokenDesc
+              icon="https://image.flaticon.com/icons/png/512/902/902827.png"
+              title="Current Earnings"
+              amount={809}
+            />
+            <TokenDesc
+              icon="https://cdn.iconscout.com/icon/free/png-256/bar-graph-chart-performance-column-statics-analysis-2-11372.png"
+              title="Total Micro"
+              amount={98909}
+            />
           </Flex>
           <Flex className="portfolio-container">
             <Text>Please hold on we are gathering your portfolio</Text>
@@ -419,11 +531,11 @@ export const Dashboard: React.FC<Props> = ({ profile }) => {
           <TransactionsTable _columns={transactionColumns} _data={transactionData} />
         </div>
         <div className="content-right">
-          <TransactButtons justifyContent="space-around">
-            <Button variant="success" size="sm">
+          <TransactButtons justifyContent="center">
+            <Button variant="success" size="sm" mr="1">
               Receive
             </Button>
-            <Button variant="danger" size="sm">
+            <Button variant="danger" size="sm" ml="1">
               Send
             </Button>
           </TransactButtons>
