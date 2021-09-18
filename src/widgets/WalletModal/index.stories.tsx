@@ -12,6 +12,14 @@ export const Wallet: React.FC = () => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     () => null,
     () => null,
+    (email: string) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log("signing in", email);
+          resolve(1);
+        }, 1000);
+      });
+    },
     "0xbdda50183d817c3289f895a4472eb475967dc980"
   );
   return (
