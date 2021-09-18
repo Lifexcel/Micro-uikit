@@ -7,10 +7,11 @@ import { IconButton } from "../../components/Button";
 import { InjectedProps } from "./types";
 
 interface Props extends InjectedProps {
-  title: string;
+  title?: any;
   hideCloseButton?: boolean;
   onBack?: () => void;
   bodyPadding?: string;
+  header?: React.ReactNode;
 }
 
 const StyledModal = styled.div`
@@ -26,6 +27,7 @@ const StyledModal = styled.div`
     min-width: 360px;
     max-width: 100%;
   }
+  position: relative;
 `;
 
 const ModalHeader = styled.div`
@@ -39,10 +41,17 @@ const ModalHeader = styled.div`
 const ModalTitle = styled(Flex)`
   align-items: center;
   flex: 1;
+  display: block;
+`;
+
+const CloseIconButton = styled(IconButton)`
+  position: absolute;
+  right: 0;
 `;
 
 const Modal: React.FC<Props> = ({
   title,
+  header,
   onDismiss,
   onBack,
   children,
@@ -50,21 +59,23 @@ const Modal: React.FC<Props> = ({
   bodyPadding = "24px",
 }) => (
   <StyledModal>
-    <ModalHeader>
-      <ModalTitle>
-        {onBack && (
-          <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
-            <ArrowBackIcon color="primary" />
-          </IconButton>
-        )}
-        <Heading>{title}</Heading>
-      </ModalTitle>
-      {!hideCloseButton && (
-        <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-          <CloseIcon color="primary" />
-        </IconButton>
-      )}
-    </ModalHeader>
+    {!hideCloseButton && (
+      <CloseIconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+        <CloseIcon color="primary" />
+      </CloseIconButton>
+    )}
+    {header || (
+      <ModalHeader>
+        <ModalTitle>
+          {onBack && (
+            <IconButton variant="text" onClick={onBack} area-label="go back" mr="8px">
+              <ArrowBackIcon color="primary" />
+            </IconButton>
+          )}
+          <Heading>{title || ""}</Heading>
+        </ModalTitle>
+      </ModalHeader>
+    )}
     <Flex flexDirection="column" p={bodyPadding}>
       {children}
     </Flex>
