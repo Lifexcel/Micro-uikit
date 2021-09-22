@@ -24,11 +24,17 @@ const fakeProfile = {
 } as Profile;
 
 export const DashboardMain: React.FC = () => {
+  const magicLogin = async (email: string) => {
+    console.log(email);
+    return 1;
+  };
+
   return (
     <BrowserRouter>
       <Menu
         account="0xbdda50183d817c3289f895a4472eb475967dc980"
         login={noop}
+        magicLogin={magicLogin}
         logout={noop}
         isDark={false}
         toggleTheme={noop}
@@ -38,6 +44,7 @@ export const DashboardMain: React.FC = () => {
         cakePriceUsd={0.23158668932877668}
         links={links}
         profile={fakeProfile}
+        priceLink=""
       >
         <Dashboard profile={fakeProfile} />
       </Menu>

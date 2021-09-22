@@ -130,7 +130,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
                 e.preventDefault();
                 if (!isLoading) {
                   setIsLoading(true);
-                  if (magicLogin) await magicLogin("ada");
+                  if (magicLogin) await magicLogin(email);
                   setIsLoading(false);
                 }
               }}
