@@ -16,6 +16,10 @@ export default {
 };
 
 const langs: LangType[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}` }));
+const magicLogin = async (email: string) => {
+  console.log(email);
+  return 1;
+};
 
 export const Connected: React.FC = () => {
   return (
@@ -23,6 +27,7 @@ export const Connected: React.FC = () => {
       <Menu
         account="0xbdda50183d817c3289f895a4472eb475967dc980"
         login={noop}
+        magicLogin={magicLogin}
         logout={noop}
         isDark={false}
         toggleTheme={noop}
@@ -62,6 +67,7 @@ export const NotConnected: React.FC = () => {
       <Menu
         account={null}
         login={noop}
+        magicLogin={magicLogin}
         logout={noop}
         isDark
         toggleTheme={noop}
@@ -69,6 +75,7 @@ export const NotConnected: React.FC = () => {
         setLang={noop}
         currentLang="EN"
         links={links}
+        priceLink=""
       >
         <div>
           <h1>Page body</h1>
@@ -93,6 +100,7 @@ export const WithNoProfile: React.FC = () => {
       <Menu
         account="0xbdda50183d817c3289f895a4472eb475967dc980"
         login={noop}
+        magicLogin={magicLogin}
         logout={noop}
         isDark={false}
         toggleTheme={noop}
@@ -135,6 +143,7 @@ export const WithProfile: React.FC = () => {
       <Menu
         account="0xbdda50183d817c3289f895a4472eb475967dc980"
         login={noop}
+        magicLogin={magicLogin}
         logout={noop}
         isDark={false}
         toggleTheme={noop}

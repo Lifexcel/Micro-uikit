@@ -1,4 +1,4 @@
-import { Login } from "../WalletModal/types";
+import { Login, MagicLogin } from "../WalletModal/types";
 
 export interface LangType {
   code: string;
@@ -52,6 +52,7 @@ export interface PanelProps {
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
+  magicLogin: MagicLogin;
   profile?: Profile;
   logout: () => void;
 }
