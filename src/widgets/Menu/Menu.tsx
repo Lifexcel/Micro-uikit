@@ -83,6 +83,7 @@ const CustomWalletInfo = styled(Tag)`
 const Menu: React.FC<NavProps> = ({
   account,
   login,
+  magicLogin,
   logout,
   isDark,
   toggleTheme,
@@ -94,6 +95,7 @@ const Menu: React.FC<NavProps> = ({
   priceLink,
   profile,
   children,
+
 }) => {
   const { isXXl, isXL } = useMatchBreakpoints();
   const isMobile = isXXl === false && isXL === false;
@@ -152,7 +154,7 @@ const Menu: React.FC<NavProps> = ({
             <SunIcon color="secondary" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
             <MoonIcon color="secondary" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
           </ThemeChangeTab>
-          <UserBlock account={account} login={login} logout={logout} />
+          <UserBlock account={account} login={login} magicLogin={magicLogin} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>

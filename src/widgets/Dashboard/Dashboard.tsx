@@ -17,7 +17,6 @@ import {
   ChevronUpIcon,
   BinanceIcon,
   GooseRoundIcon,
-  SvgProps,
 } from "../../components/Svg/index";
 import { Profile } from "../Menu/types";
 import { Flex } from "../../components/Flex";
@@ -375,7 +374,7 @@ const TransactionsTable = <T extends DataType>({ _columns, _data }: { _columns: 
 };
 
 export const Dashboard: React.FC<Props> = ({ profile }) => {
-  const iconsMap: { [key: string]: React.FC<SvgProps> } = {
+  const iconsMap: { [key: string]: JSX.Element } = {
     binance: <BinanceIcon />,
     goose: <GooseRoundIcon />,
   };
@@ -481,7 +480,7 @@ export const Dashboard: React.FC<Props> = ({ profile }) => {
           <Button variant="text" size="sm">
             <BlockIcon />
           </Button>
-          <Button variant="secondary" size="sm" startIcon={<CheckmarkCircleIcon size="sm" color="primary" />}>
+          <Button variant="secondary" size="sm" startIcon={<CheckmarkCircleIcon fontSize="14px" color="primary" />}>
             Active
           </Button>
         </Flex>
