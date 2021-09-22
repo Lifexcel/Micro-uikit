@@ -95,7 +95,6 @@ const Menu: React.FC<NavProps> = ({
   priceLink,
   profile,
   children,
-
 }) => {
   const { isXXl, isXL } = useMatchBreakpoints();
   const isMobile = isXXl === false && isXL === false;

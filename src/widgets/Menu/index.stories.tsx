@@ -19,7 +19,7 @@ const langs: LangType[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, langua
 const magicLogin = async (email: string) => {
   console.log(email);
   return 1;
-}
+};
 
 export const Connected: React.FC = () => {
   return (

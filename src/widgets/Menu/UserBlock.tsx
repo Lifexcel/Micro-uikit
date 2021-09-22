@@ -40,7 +40,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, magicLogin }: Prop
 };
 
 UserBlock.defaultProps = {
-  account: undefined
-}
+  account: undefined,
+};
 
 export default UserBlock;

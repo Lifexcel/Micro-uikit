@@ -27,7 +27,7 @@ export const DashboardMain: React.FC = () => {
   const magicLogin = async (email: string) => {
     console.log(email);
     return 1;
-  }
+  };
 
   return (
     <BrowserRouter>
