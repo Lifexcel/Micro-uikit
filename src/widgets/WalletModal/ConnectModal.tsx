@@ -6,9 +6,12 @@ import { Modal } from "../Modal";
 import WalletCard from "./WalletCard";
 import config from "./config";
 import { Login } from "./types";
+import { MagicLogin } from "../MagicLogin";
+import {MaLogin} from "../MagicLogin/types";
 
 interface Props {
   login: Login;
+  maLogin: (email?: string) => MaLogin;
   onDismiss?: () => void;
 }
 
@@ -19,7 +22,7 @@ const HelpLink = styled(Link)`
   margin-top: 24px;
 `;
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ login, maLogin, onDismiss = () => null }) => (
   <Modal title="Connect to a wallet" onDismiss={onDismiss}>
     {config.map((entry, index) => (
       <WalletCard
@@ -30,6 +33,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
         mb={index < config.length - 1 ? "8px" : "0"}
       />
     ))}
+    <MagicLogin email='gettosuman@gmail.com' magicLogin={maLogin} />
     {/* <HelpLink */}
     {/*  href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain" */}
     {/*  external */}
