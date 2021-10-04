@@ -28,12 +28,15 @@ const ConnectModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 720px;
 
   .connect-options {
     display: grid;
     grid-template-columns: auto;
     grid-gap: 5px;
+  }
+
+  .connect-body {
+    width: auto;
   }
 
   .title {
@@ -55,14 +58,17 @@ const ConnectModalWrapper = styled.div`
 
   .magic-login {
     margin-top: 0.5rem;
+    width: auto;
   }
 
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row-reverse;
+
     .magic-login {
-      margin-right-: 5px;
-      padding-right: 5px;
+      margin-right: 5px;
+      width: 50%;
     }
+
     .connect-options {
       grid-template-columns: auto auto;
       grid-gap: 5px;
@@ -71,10 +77,9 @@ const ConnectModalWrapper = styled.div`
 `;
 
 const MagicWrapper = styled.div`
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
-
   form {
     margin: 0 0.5rem;
     .email-input {
@@ -89,7 +94,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
   return (
     <Modal header={<></>} onDismiss={onDismiss}>
       <ConnectModalWrapper className="connect-modal-wrapper">
-        <Flex flexDirection="column" justifyContent="center">
+        <Flex flexDirection="column" justifyContent="center" className="connect-body">
           <Text className="title" fontSize="20px" bold>
             Connect to a wallet
           </Text>
