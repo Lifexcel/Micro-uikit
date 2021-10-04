@@ -2766,21 +2766,21 @@ var WalletCard = function (_a) {
 //   align-items: center;
 //   margin-top: 24px;
 // `;
-var ConnectModalWrapper = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  max-width: 720px;\n\n  .connect-options {\n    display: grid;\n    grid-template-columns: auto;\n    grid-gap: 5px;\n  }\n\n  .title {\n    display: flex;\n    justify-content: center;\n    margin-bottom: 1.5rem;\n    position: relative;\n\n    &:after {\n      content: \"\";\n      left: 30%;\n      bottom: -5px;\n      position: absolute;\n      width: 40%;\n      height: 1px;\n      background: ", ";\n    }\n  }\n\n  .magic-login {\n    margin-top: 0.5rem;\n  }\n\n  ", " {\n    flex-direction: row-reverse;\n    .magic-login {\n      margin-right-: 5px;\n      padding-right: 5px;\n    }\n    .connect-options {\n      grid-template-columns: auto auto;\n      grid-gap: 5px;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  max-width: 720px;\n\n  .connect-options {\n    display: grid;\n    grid-template-columns: auto;\n    grid-gap: 5px;\n  }\n\n  .title {\n    display: flex;\n    justify-content: center;\n    margin-bottom: 1.5rem;\n    position: relative;\n\n    &:after {\n      content: \"\";\n      left: 30%;\n      bottom: -5px;\n      position: absolute;\n      width: 40%;\n      height: 1px;\n      background: ", ";\n    }\n  }\n\n  .magic-login {\n    margin-top: 0.5rem;\n  }\n\n  ", " {\n    flex-direction: row-reverse;\n    .magic-login {\n      margin-right-: 5px;\n      padding-right: 5px;\n    }\n    .connect-options {\n      grid-template-columns: auto auto;\n      grid-gap: 5px;\n    }\n  }\n"])), function (_a) {
+var ConnectModalWrapper = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n\n  .connect-options {\n    display: grid;\n    grid-template-columns: auto;\n    grid-gap: 5px;\n  }\n\n  .connect-body {\n    width: auto;\n  }\n\n  .title {\n    display: flex;\n    justify-content: center;\n    margin-bottom: 1.5rem;\n    position: relative;\n\n    &:after {\n      content: \"\";\n      left: 30%;\n      bottom: -5px;\n      position: absolute;\n      width: 40%;\n      height: 1px;\n      background: ", ";\n    }\n  }\n\n  .magic-login {\n    margin-top: 0.5rem;\n    width: auto;\n  }\n\n  ", " {\n    flex-direction: row-reverse;\n\n    .magic-login {\n      margin-right: 5px;\n      width: 50%;\n    }\n\n    .connect-options {\n      grid-template-columns: auto auto;\n      grid-gap: 5px;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n\n  .connect-options {\n    display: grid;\n    grid-template-columns: auto;\n    grid-gap: 5px;\n  }\n\n  .connect-body {\n    width: auto;\n  }\n\n  .title {\n    display: flex;\n    justify-content: center;\n    margin-bottom: 1.5rem;\n    position: relative;\n\n    &:after {\n      content: \"\";\n      left: 30%;\n      bottom: -5px;\n      position: absolute;\n      width: 40%;\n      height: 1px;\n      background: ", ";\n    }\n  }\n\n  .magic-login {\n    margin-top: 0.5rem;\n    width: auto;\n  }\n\n  ", " {\n    flex-direction: row-reverse;\n\n    .magic-login {\n      margin-right: 5px;\n      width: 50%;\n    }\n\n    .connect-options {\n      grid-template-columns: auto auto;\n      grid-gap: 5px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var MagicWrapper = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"])));
+var MagicWrapper = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, magicLogin = _a.magicLogin;
     var _c = React.useState(""), email = _c[0], setEmail = _c[1];
     var _d = React.useState(false), isLoading = _d[0], setIsLoading = _d[1];
     return (React.createElement(Modal, { header: React.createElement(React.Fragment, null), onDismiss: onDismiss },
         React.createElement(ConnectModalWrapper, { className: "connect-modal-wrapper" },
-            React.createElement(Flex, { flexDirection: "column", justifyContent: "center" },
+            React.createElement(Flex, { flexDirection: "column", justifyContent: "center", className: "connect-body" },
                 React.createElement(Text, { className: "title", fontSize: "20px", bold: true }, "Connect to a wallet"),
                 React.createElement("div", { className: "connect-options" }, connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }))),
             React.createElement(MagicWrapper, { className: "magic-login" },
@@ -2879,7 +2879,7 @@ var UserBlock = function (_a) {
         } }, "Connect"))));
 };
 UserBlock.defaultProps = {
-    account: undefined
+    account: undefined,
 };
 
 var Icon$1f = function (props) {
