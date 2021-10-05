@@ -2790,7 +2790,15 @@ var MagicWrapper = styled__default['default'].div(templateObject_2$d || (templat
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, magicLogin = _a.magicLogin;
     var _c = React__default['default'].useState(""), email = _c[0], setEmail = _c[1];
-    var _d = React__default['default'].useState(false), isLoading = _d[0], setIsLoading = _d[1];
+    var _d = React__default['default'].useState(false), remember = _d[0], setRemember = _d[1];
+    var _e = React__default['default'].useState(""), error = _e[0], setError = _e[1];
+    var _f = React__default['default'].useState(false), isLoading = _f[0], setIsLoading = _f[1];
+    var loginCallback = function (err) {
+        setIsLoading(false);
+        if (err) {
+            setError(err);
+        }
+    };
     return (React__default['default'].createElement(Modal, { header: React__default['default'].createElement(React__default['default'].Fragment, null), onDismiss: onDismiss },
         React__default['default'].createElement(ConnectModalWrapper, { className: "connect-modal-wrapper" },
             React__default['default'].createElement(Flex, { flexDirection: "column", justifyContent: "center", className: "connect-body" },
@@ -2801,9 +2809,13 @@ var ConnectModal = function (_a) {
                 React__default['default'].createElement("form", null,
                     React__default['default'].createElement(Input, { name: "email", type: "email", className: "email-input", value: email, onChange: function (e) {
                             var _a;
-                            setIsLoading(false);
+                            setError("");
                             setEmail((_a = e === null || e === void 0 ? void 0 : e.target) === null || _a === void 0 ? void 0 : _a.value);
                         }, required: true }),
+                    React__default['default'].createElement(Checkbox, { checked: remember, onClick: function () {
+                            setRemember(!remember);
+                        } }),
+                    React__default['default'].createElement(Text, { color: "danger" }, error),
                     React__default['default'].createElement(Button, { type: "button", fullWidth: true, isLoading: isLoading, onClick: function (e) { return __awaiter(void 0, void 0, void 0, function () {
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
@@ -2812,7 +2824,7 @@ var ConnectModal = function (_a) {
                                         if (!!isLoading) return [3 /*break*/, 3];
                                         setIsLoading(true);
                                         if (!magicLogin) return [3 /*break*/, 2];
-                                        return [4 /*yield*/, magicLogin(email)];
+                                        return [4 /*yield*/, magicLogin(email, remember, loginCallback)];
                                     case 1:
                                         _a.sent();
                                         _a.label = 2;

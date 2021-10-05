@@ -137,12 +137,18 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
               }}
               required
             />
-            <Checkbox
-              checked={remember}
-              onClick={() => {
-                setRemember(!remember);
-              }}
-            />
+            <Flex alignItems="center">
+              <Checkbox
+                checked={remember}
+                scale="sm"
+                onChange={
+                  () => {
+                    setRemember(!remember)
+                  }
+                }
+              />
+              <Text ml="1">Remember Me</Text>
+            </Flex>
             <Text color="danger">{error}</Text>
 
             <Button
