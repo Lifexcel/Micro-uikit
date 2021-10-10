@@ -10,6 +10,7 @@ import { Text } from "../../components/Text";
 import { Flex } from "../../components/Flex";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { Checkbox } from "../../components/Checkbox";
 
 interface Props {
   login: Login;
@@ -82,15 +83,24 @@ const MagicWrapper = styled.div`
   align-items: center;
   form {
     margin: 0 0.5rem;
-    .email-input {
-      margin-bottom: 1rem;
+    .email-input{
+      margin-bottom:1rem;
     }
   }
 `;
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLogin }) => {
   const [email, setEmail] = React.useState("");
+  const [remember, setRemember] = React.useState(false);
+  const [error, setError] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+
+  const loginCallback = (err?: string) => {
+    setIsLoading(false);
+    if (err) {
+      setError(err);
+    }
+  };
   return (
     <Modal header={<></>} onDismiss={onDismiss}>
       <ConnectModalWrapper className="connect-modal-wrapper">
@@ -122,11 +132,23 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
               className="email-input"
               value={email}
               onChange={(e) => {
-                setIsLoading(false);
+                setError("");
                 setEmail(e?.target?.value);
               }}
               required
             />
+            <Flex alignItems="center" mb="1rem">
+              <Checkbox
+                checked={remember}
+                scale="sm"
+                onChange={() => {
+                  setRemember(!remember);
+                }}
+              />
+              <Text ml="1">Remember Me</Text>
+            </Flex>
+            <Text color="danger">{error}</Text>
+
             <Button
               type="button"
               fullWidth
@@ -135,7 +157,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
                 e.preventDefault();
                 if (!isLoading) {
                   setIsLoading(true);
-                  if (magicLogin) await magicLogin(email);
+                  if (magicLogin) await magicLogin(email, remember, loginCallback);
                   setIsLoading(false);
                 }
               }}
