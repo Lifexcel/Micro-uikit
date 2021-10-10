@@ -2785,6 +2785,7 @@ var ConnectModal = function (_a) {
         if (err) {
             setError(err);
         }
+        onDismiss();
     };
     return (React.createElement(Modal, { header: React.createElement(React.Fragment, null), onDismiss: onDismiss },
         React.createElement(ConnectModalWrapper, { className: "connect-modal-wrapper" },
