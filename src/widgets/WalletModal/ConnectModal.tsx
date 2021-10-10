@@ -83,8 +83,8 @@ const MagicWrapper = styled.div`
   align-items: center;
   form {
     margin: 0 0.5rem;
-    .email-input{
-      margin-bottom:1rem;
+    .email-input {
+      margin-bottom: 1rem;
     }
   }
 `;

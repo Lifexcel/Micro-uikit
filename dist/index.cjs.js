@@ -2786,7 +2786,7 @@ var ConnectModalWrapper = styled__default['default'].div(templateObject_1$E || (
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var MagicWrapper = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input{\n      margin-bottom:1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input{\n      margin-bottom:1rem;\n    }\n  }\n"])));
+var MagicWrapper = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, magicLogin = _a.magicLogin;
     var _c = React__default['default'].useState(""), email = _c[0], setEmail = _c[1];
