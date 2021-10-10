@@ -83,8 +83,8 @@ const MagicWrapper = styled.div`
   align-items: center;
   form {
     margin: 0 0.5rem;
-    .email-input {
-      margin-bottom: 1rem;
+    .email-input{
+      margin-bottom:1rem;
     }
   }
 `;
@@ -137,15 +137,13 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
               }}
               required
             />
-            <Flex alignItems="center">
+            <Flex alignItems="center" mb="1rem">
               <Checkbox
                 checked={remember}
                 scale="sm"
-                onChange={
-                  () => {
-                    setRemember(!remember)
-                  }
-                }
+                onChange={() => {
+                  setRemember(!remember);
+                }}
               />
               <Text ml="1">Remember Me</Text>
             </Flex>
