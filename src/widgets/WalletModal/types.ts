@@ -14,7 +14,7 @@ export type ConnectorId =
   | "bsc";
 
 export type Login = (connectorId: ConnectorId) => void;
-export type MagicLogin = (email: string) => Promise<unknown>;
+export type MagicLogin = (email: string, remember: boolean, loginCallback: (error?: string) => void) => void;
 
 export interface Config {
   title: string;

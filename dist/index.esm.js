@@ -2773,11 +2773,19 @@ var ConnectModalWrapper = styled.div(templateObject_1$E || (templateObject_1$E =
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var MagicWrapper = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"])));
+var MagicWrapper = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input{\n      margin-bottom:1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input{\n      margin-bottom:1rem;\n    }\n  }\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, magicLogin = _a.magicLogin;
     var _c = React.useState(""), email = _c[0], setEmail = _c[1];
-    var _d = React.useState(false), isLoading = _d[0], setIsLoading = _d[1];
+    var _d = React.useState(false), remember = _d[0], setRemember = _d[1];
+    var _e = React.useState(""), error = _e[0], setError = _e[1];
+    var _f = React.useState(false), isLoading = _f[0], setIsLoading = _f[1];
+    var loginCallback = function (err) {
+        setIsLoading(false);
+        if (err) {
+            setError(err);
+        }
+    };
     return (React.createElement(Modal, { header: React.createElement(React.Fragment, null), onDismiss: onDismiss },
         React.createElement(ConnectModalWrapper, { className: "connect-modal-wrapper" },
             React.createElement(Flex, { flexDirection: "column", justifyContent: "center", className: "connect-body" },
@@ -2788,9 +2796,15 @@ var ConnectModal = function (_a) {
                 React.createElement("form", null,
                     React.createElement(Input, { name: "email", type: "email", className: "email-input", value: email, onChange: function (e) {
                             var _a;
-                            setIsLoading(false);
+                            setError("");
                             setEmail((_a = e === null || e === void 0 ? void 0 : e.target) === null || _a === void 0 ? void 0 : _a.value);
                         }, required: true }),
+                    React.createElement(Flex, { alignItems: "center", mb: "1rem" },
+                        React.createElement(Checkbox, { checked: remember, scale: "sm", onChange: function () {
+                                setRemember(!remember);
+                            } }),
+                        React.createElement(Text, { ml: "1" }, "Remember Me")),
+                    React.createElement(Text, { color: "danger" }, error),
                     React.createElement(Button, { type: "button", fullWidth: true, isLoading: isLoading, onClick: function (e) { return __awaiter(void 0, void 0, void 0, function () {
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
@@ -2799,7 +2813,7 @@ var ConnectModal = function (_a) {
                                         if (!!isLoading) return [3 /*break*/, 3];
                                         setIsLoading(true);
                                         if (!magicLogin) return [3 /*break*/, 2];
-                                        return [4 /*yield*/, magicLogin(email)];
+                                        return [4 /*yield*/, magicLogin(email, remember, loginCallback)];
                                     case 1:
                                         _a.sent();
                                         _a.label = 2;
