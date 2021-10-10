@@ -1991,7 +1991,7 @@ var ModalTitle = styled__default['default'](Flex)(templateObject_3$5 || (templat
 var CloseIconButton = styled__default['default'](IconButton)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n"], ["\n  position: absolute;\n  right: 0;\n"])));
 var Modal = function (_a) {
     var title = _a.title, header = _a.header, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c;
-    return (React__default['default'].createElement(StyledModal, null,
+    return (React__default['default'].createElement(StyledModal, { id: "micro-modal" },
         !hideCloseButton && (React__default['default'].createElement(CloseIconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
             React__default['default'].createElement(Icon$k, { color: "primary" }))),
         header || (React__default['default'].createElement(ModalHeader, null,

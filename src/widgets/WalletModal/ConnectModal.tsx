@@ -100,6 +100,8 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
     if (err) {
       setError(err);
     }
+    onDismiss()
+
   };
   return (
     <Modal header={<></>} onDismiss={onDismiss}>
