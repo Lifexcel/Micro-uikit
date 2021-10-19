@@ -154,11 +154,11 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
               type="button"
               fullWidth
               isLoading={isLoading}
-              onClick={async (e: any) => {
+              onClick={(e: any) => {
                 e.preventDefault();
                 if (!isLoading) {
                   setIsLoading(true);
-                  if (magicLogin) await magicLogin(email, remember, loginCallback);
+                  if (magicLogin) magicLogin(email, remember, loginCallback);
                   setIsLoading(false);
                 }
               }}
