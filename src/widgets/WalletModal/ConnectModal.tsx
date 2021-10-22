@@ -83,8 +83,8 @@ const MagicWrapper = styled.div`
   align-items: center;
   form {
     margin: 0 0.5rem;
-    .email-input{
-      margin-bottom:1rem;
+    .email-input {
+      margin-bottom: 1rem;
     }
   }
 `;
@@ -100,6 +100,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
     if (err) {
       setError(err);
     }
+    onDismiss();
   };
   return (
     <Modal header={<></>} onDismiss={onDismiss}>
@@ -153,11 +154,11 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, magicLog
               type="button"
               fullWidth
               isLoading={isLoading}
-              onClick={async (e: any) => {
+              onClick={(e: any) => {
                 e.preventDefault();
                 if (!isLoading) {
                   setIsLoading(true);
-                  if (magicLogin) await magicLogin(email, remember, loginCallback);
+                  if (magicLogin) magicLogin(email, remember, loginCallback);
                   setIsLoading(false);
                 }
               }}

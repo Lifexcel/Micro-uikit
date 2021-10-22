@@ -58,7 +58,7 @@ const Modal: React.FC<Props> = ({
   hideCloseButton = false,
   bodyPadding = "24px",
 }) => (
-  <StyledModal>
+  <StyledModal id="micro-modal">
     {!hideCloseButton && (
       <CloseIconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
         <CloseIcon color="primary" />

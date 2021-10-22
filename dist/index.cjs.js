@@ -1991,7 +1991,7 @@ var ModalTitle = styled__default['default'](Flex)(templateObject_3$5 || (templat
 var CloseIconButton = styled__default['default'](IconButton)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n"], ["\n  position: absolute;\n  right: 0;\n"])));
 var Modal = function (_a) {
     var title = _a.title, header = _a.header, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c;
-    return (React__default['default'].createElement(StyledModal, null,
+    return (React__default['default'].createElement(StyledModal, { id: "micro-modal" },
         !hideCloseButton && (React__default['default'].createElement(CloseIconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
             React__default['default'].createElement(Icon$k, { color: "primary" }))),
         header || (React__default['default'].createElement(ModalHeader, null,
@@ -2786,7 +2786,7 @@ var ConnectModalWrapper = styled__default['default'].div(templateObject_1$E || (
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var MagicWrapper = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input{\n      margin-bottom:1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input{\n      margin-bottom:1rem;\n    }\n  }\n"])));
+var MagicWrapper = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"], ["\n  display: block;\n  flex-direction: column;\n  align-items: center;\n  form {\n    margin: 0 0.5rem;\n    .email-input {\n      margin-bottom: 1rem;\n    }\n  }\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, magicLogin = _a.magicLogin;
     var _c = React__default['default'].useState(""), email = _c[0], setEmail = _c[1];
@@ -2798,6 +2798,7 @@ var ConnectModal = function (_a) {
         if (err) {
             setError(err);
         }
+        onDismiss();
     };
     return (React__default['default'].createElement(Modal, { header: React__default['default'].createElement(React__default['default'].Fragment, null), onDismiss: onDismiss },
         React__default['default'].createElement(ConnectModalWrapper, { className: "connect-modal-wrapper" },
