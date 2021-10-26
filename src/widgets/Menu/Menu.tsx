@@ -11,7 +11,7 @@ import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_DESKTOP_HEIGHT } from "./config";
 import Avatar from "./Avatar";
 import * as IconModule from "./icons";
-import { SvgProps, CommunityIcon } from "../../components/Svg";
+import { SvgProps, BinanceIcon } from "../../components/Svg";
 
 import { Footer } from "./Footer";
 import { Tag } from "../../components/Tag";
@@ -69,7 +69,7 @@ const MobileOnlyOverlay = styled(Overlay)`
 `;
 const ThemeChangeTab = styled.div`
   display: flex;
-  margin: 10px;
+  margin-right: 10px;
   cursor: pointer;
 `;
 
@@ -96,8 +96,8 @@ const Menu: React.FC<NavProps> = ({
   profile,
   children,
 }) => {
-  const { isXXl, isXL } = useMatchBreakpoints();
-  const isMobile = isXXl === false && isXL === false;
+  const { isXxl, isXl } = useMatchBreakpoints();
+  const isMobile = isXxl === false && isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
@@ -145,7 +145,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex style={{ justifyContent: "center", alignItems: "center" }}>
-          <CustomWalletInfo variant="tertiary" startIcon={<CommunityIcon />}>
+          <CustomWalletInfo variant="tertiary" startIcon={<BinanceIcon color="primary" />}>
             {isMobile ? `${walletName.slice(0, 3)}` : walletName}
           </CustomWalletInfo>
 
@@ -153,7 +153,7 @@ const Menu: React.FC<NavProps> = ({
             <SunIcon color="secondary" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
             <MoonIcon color="secondary" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
           </ThemeChangeTab>
-          <UserBlock account={account} login={login} magicLogin={magicLogin} logout={logout} />
+          <UserBlock account={account} login={login} magicLogin={magicLogin} logout={logout} isMobile={isMobile} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
