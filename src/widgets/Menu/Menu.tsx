@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
 import { Flex } from "../../components/Flex";
@@ -15,6 +15,7 @@ import { SvgProps, BinanceIcon } from "../../components/Svg";
 
 import { Footer } from "./Footer";
 import { Tag } from "../../components/Tag";
+import getColor from "../../util/getColor";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
@@ -68,7 +69,7 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 const ThemeChangeTab = styled.div`
-  display: flex;
+  display: block;
   margin-right: 10px;
   cursor: pointer;
 `;
@@ -101,6 +102,7 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
+  const theme = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,9 +152,21 @@ const Menu: React.FC<NavProps> = ({
           </CustomWalletInfo>
 
           <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
-            <SunIcon color="secondary" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
-            <MoonIcon color="secondary" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
+            <SunIcon
+              style={{ display: isDark ? "block" : "none" }}
+              color={getColor("secondary", theme)}
+              width="24px"
+              key="sun"
+            />
+
+            <MoonIcon
+              style={{ display: !isDark ? "block" : "none" }}
+              color={getColor("secondary", theme)}
+              width="24px"
+              key="moon"
+            />
           </ThemeChangeTab>
+
           <UserBlock account={account} login={login} magicLogin={magicLogin} logout={logout} isMobile={isMobile} />
           {profile && <Avatar profile={profile} />}
         </Flex>
