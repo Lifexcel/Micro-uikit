@@ -30,6 +30,7 @@ export type Shadows = {
 
 export type Gradients = {
   bubblegum: string;
+  bluepink: string;
 };
 
 export type Colors = {
@@ -50,6 +51,7 @@ export type Colors = {
   input: string;
   background: string;
   backgroundDisabled: string;
+  backgroundSecondary: string;
   text: string;
   textDisabled: string;
   textSubtle: string;
@@ -59,7 +61,11 @@ export type Colors = {
   footerShadow: string;
   // Gradients
   gradients: Gradients;
-
+  // Gradient Colors
+  gradientL: string;
+  gradientR: string;
+  // other colors
+  blue: string;
   // Brand colors
   binance: string;
 };

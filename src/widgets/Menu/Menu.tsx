@@ -10,15 +10,11 @@ import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, FOOTER_DESKTOP_HEIGHT } from "./config";
 import Avatar from "./Avatar";
-import * as IconModule from "./icons";
-import { SvgProps, BinanceIcon } from "../../components/Svg";
+import { BinanceIcon } from "../../components/Svg";
 
 import { Footer } from "./Footer";
 import { Tag } from "../../components/Tag";
-
-const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-
-const { MoonIcon, SunIcon } = Icons;
+import ThemeChangeTab from "../../components/ThemeChangeTab/ThemeChangeTab";
 
 const Wrapper = styled.div`
   position: relative;
@@ -66,11 +62,6 @@ const MobileOnlyOverlay = styled(Overlay)`
   ${({ theme }) => theme.mediaQueries.nav} {
     display: none;
   }
-`;
-const ThemeChangeTab = styled.div`
-  display: flex;
-  margin-right: 10px;
-  cursor: pointer;
 `;
 
 const CustomWalletInfo = styled(Tag)`
@@ -149,10 +140,8 @@ const Menu: React.FC<NavProps> = ({
             {isMobile ? `${walletName.slice(0, 3)}` : walletName}
           </CustomWalletInfo>
 
-          <ThemeChangeTab onClick={() => toggleTheme(!isDark)}>
-            <SunIcon color="secondary" width="24px" style={{ display: isDark ? "block" : "none" }} key="sun" />
-            <MoonIcon color="secondary" width="24px" style={{ display: !isDark ? "block" : "none" }} key="moon" />
-          </ThemeChangeTab>
+          <ThemeChangeTab toggleTheme={toggleTheme} isDark={isDark} />
+
           <UserBlock account={account} login={login} magicLogin={magicLogin} logout={logout} isMobile={isMobile} />
           {profile && <Avatar profile={profile} />}
         </Flex>

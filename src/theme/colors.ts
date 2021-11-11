@@ -10,8 +10,14 @@ export const baseColors = {
   success: "#31D0AA",
   light: "#ffffff",
   analogous: "#fed75e",
-  dark: "#000000",
+  blue: "#003F86",
+  dark: "#0A0412",
   warning: "#FFB237",
+  gradientL: "#096DDF",
+  gradientR: "#C809BB",
+  gradients: {
+    bluepink: "linear-gradient(to right, #096DDF , C809BB)",
+  },
 };
 
 export const brandColors = {
@@ -26,6 +32,7 @@ export const lightColors: Colors = {
   secondary: "#000000",
   background: "#FAF9FA",
   backgroundDisabled: "#E9EAEB",
+  backgroundSecondary: "#ebebed",
   contrast: "#191326",
   invertedContrast: "#FFFFFF",
   input: "#eeeaf4",
@@ -38,6 +45,7 @@ export const lightColors: Colors = {
   footerShadow: "#b7b1db63",
   footer: "#a8abd1",
   gradients: {
+    ...baseColors.gradients,
     bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
   },
 };
@@ -49,6 +57,7 @@ export const darkColors: Colors = {
   secondary: "#ffeffe",
   background: "#01051e",
   backgroundDisabled: "#232427",
+  backgroundSecondary: "#161622",
   contrast: "#FFFFFF",
   invertedContrast: "#191326",
   input: "#483f5a",
@@ -62,6 +71,7 @@ export const darkColors: Colors = {
   footerShadow: "#070d2e",
   footer: "#0c6772",
   gradients: {
+    ...baseColors.gradients,
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 };

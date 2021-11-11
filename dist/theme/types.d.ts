@@ -25,6 +25,7 @@ export declare type Shadows = {
 };
 export declare type Gradients = {
     bubblegum: string;
+    bluepink: string;
 };
 export declare type Colors = {
     light: string;
@@ -44,6 +45,7 @@ export declare type Colors = {
     input: string;
     background: string;
     backgroundDisabled: string;
+    backgroundSecondary: string;
     text: string;
     textDisabled: string;
     textSubtle: string;
@@ -52,6 +54,9 @@ export declare type Colors = {
     footer: string;
     footerShadow: string;
     gradients: Gradients;
+    gradientL: string;
+    gradientR: string;
+    blue: string;
     binance: string;
 };
 export declare type ZIndices = {
