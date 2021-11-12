@@ -43,5 +43,8 @@ export { default as SwapVertIcon } from "./Icons/SwapVert";
 export { default as SyncAltIcon } from "./Icons/SyncAlt";
 export { default as WarningIcon } from "./Icons/Warning";
 export { default as LogoWithText } from "./Icons/LogoWithText";
+export { default as Twitter } from "./Icons/Twitter";
+export { default as Medium } from "./Icons/Medium";
+export { default as Telegram } from "./Icons/Telegram";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
