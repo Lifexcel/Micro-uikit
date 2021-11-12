@@ -9,8 +9,14 @@ export declare const baseColors: {
     success: string;
     light: string;
     analogous: string;
+    blue: string;
     dark: string;
     warning: string;
+    gradientL: string;
+    gradientR: string;
+    gradients: {
+        bluepink: string;
+    };
 };
 export declare const brandColors: {
     binance: string;
